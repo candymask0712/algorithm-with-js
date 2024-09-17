@@ -1,3 +1,4 @@
+// * 최근 나의 풀이 (24.09.17)
 function solution(progresses, speeds) {
   let answer = [];
 
@@ -12,6 +13,8 @@ function solution(progresses, speeds) {
 
           deployedTask++
           progresses.splice(i, 1)
+          // ! 풀이 진행 시 speeds 배열에서 요소를 삭제하지 않아 로직이 꼬임
+          // ! 배열의 요소를 삭제할 때는 인덱스와 인덱스를 참고하는 다른 배열도 잘 고려해야한다
           speeds.splice(i, 1)
           i--
       }
