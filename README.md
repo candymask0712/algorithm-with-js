@@ -14,4 +14,4 @@
 
 |   날짜    |  난이도   |                                       문제                                        |                                             나의 풀이                                              |
 | :-------: | :-------: | :-------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------: |
-| 24.09.17. | `Level 2` | [기능 개발](https://school.programmers.co.kr/learn/courses/30/lessons/42586) | [풀이 내용 링크](https://github.com/candymask0712/algorithm-with-js/blob/main/stack_queue/.js) |
+| 24.09.17. | `Level 2` | [기능 개발](https://school.programmers.co.kr/learn/courses/30/lessons/42586) | [풀이 내용 링크](https://github.com/candymask0712/algorithm-with-js/blob/main/stack_queue/pro_lv2_function-development.js) |
