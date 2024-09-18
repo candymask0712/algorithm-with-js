@@ -5,7 +5,7 @@
 [stock-price]: https://school.programmers.co.kr/learn/courses/30/lessons/42584
 [stock-price-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/stack_queue/pro_lv2_stock-price.js
 [truck-bridge]: https://school.programmers.co.kr/learn/courses/30/lessons/42583
-[truck-bridge-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/pro_lv2_trucks-crossing-bridge.js
+[truck-bridge-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/stack_queue/pro_lv2_trucks-crossing-bridge.js
 [correct-brackets]: https://school.programmers.co.kr/learn/courses/30/lessons/12909
 [correct-brackets-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/pro_lv1_correct-brackets.js
 
