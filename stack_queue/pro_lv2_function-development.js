@@ -1,3 +1,7 @@
+// * 접근 방법
+// progresses 배열의 길이가 최대 100 => 플루투포스 포함 모든 알고리즘 사용가능
+// 뒤에 있는 기능이 먼저 배포될 수 없고 순차적으로 진행 => 큐 사용
+
 // * 최근 나의 풀이 (24.09.17)
 function solution(progresses, speeds) {
   let answer = [];

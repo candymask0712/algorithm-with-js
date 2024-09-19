@@ -6,11 +6,11 @@
 [truck-bridge]: https://school.programmers.co.kr/learn/courses/30/lessons/42583
 [truck-bridge-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/stack_queue/pro_lv2_trucks-crossing-bridge.js
 [correct-brackets]: https://school.programmers.co.kr/learn/courses/30/lessons/12909
-[correct-brackets-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/pro_lv1_correct-brackets.js
+[correct-brackets-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/stack_queue/pro_lv1_correct-brackets.js
 [rotate-brackets]: https://school.programmers.co.kr/learn/courses/30/lessons/76502
-[rotate-brackets-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/pro_lv1_correct-brackets.js
+[rotate-brackets-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/stack_queue/pro_lv2_rotate-brackets.js
 [number-game]: https://school.programmers.co.kr/learn/courses/30/lessons/12987
-[number-game-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/pro_lv3_number-game.js
+[number-game-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/greedy/pro_lv3_number-game.js
 
 <div align="center">
   <br />
