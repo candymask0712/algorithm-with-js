@@ -1,24 +1,24 @@
 [//]: # 'URL 변수 정의'
 [func-dev]: https://school.programmers.co.kr/learn/courses/30/lessons/42586
-[func-dev-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/stack_queue/pro_lv2_function-development.js
+[func-dev-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/Stack%26Queue/Queue/pro_lv2_function-development.js
 [stock-price]: https://school.programmers.co.kr/learn/courses/30/lessons/42584
-[stock-price-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/stack_queue/pro_lv2_stock-price.js
+[stock-price-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/Stack%26Queue/Queue/pro_lv2_stock-price.js
 [truck-bridge]: https://school.programmers.co.kr/learn/courses/30/lessons/42583
-[truck-bridge-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/stack_queue/pro_lv2_trucks-crossing-bridge.js
+[truck-bridge-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/Stack%26Queue/Queue/pro_lv2_trucks-crossing-bridge.js
 [correct-brackets]: https://school.programmers.co.kr/learn/courses/30/lessons/12909
-[correct-brackets-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/stack_queue/pro_lv1_correct-brackets.js
+[correct-brackets-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/Stack%26Queue/Stack/pro_lv1_correct-brackets.js
 [rotate-brackets]: https://school.programmers.co.kr/learn/courses/30/lessons/76502
-[rotate-brackets-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/stack_queue/pro_lv2_rotate-brackets.js
+[rotate-brackets-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/Stack%26Queue/Stack/pro_lv2_rotate-brackets.js
 [number-game]: https://school.programmers.co.kr/learn/courses/30/lessons/12987
 [number-game-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/greedy/pro_lv3_number-game.js
 [sticker-collection-2]: https://school.programmers.co.kr/learn/courses/30/lessons/12971#
-[sticker-collection-2-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/greedy/pro_lv3_sticker-collection-2
+[sticker-collection-2-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/DP/pro_lv3_sticker-collection-2.js
 [calculate-parking-fee]: https://school.programmers.co.kr/learn/courses/30/lessons/92341
-[calculate-parking-fee-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/greedy/pro_lv3_sticker-collection-2
+[calculate-parking-fee-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/Implementation/pro_lv2_calculate_parking_fee.js
 [rotate-matrix-edge]: https://school.programmers.co.kr/learn/courses/30/lessons/77485
-[rotate-matrix-edge-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/greedy/pro_lv3_sticker-collection-2
+[rotate-matrix-edge-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/Implementation/pro_lv2_rotate-matrix-edge.js
 [sum-of-contiguous-sequence]: https://school.programmers.co.kr/learn/courses/30/lessons/77485
-[sum-of-contiguous-sequence-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/greedy/pro_lv3_sticker-collection-2
+[sum-of-contiguous-sequence-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/Search%26Traversal/Search/Two-Pointer/Pro_lv2_sum-of-contiguous-sequence.js
 
 <div align="center">
   <br />
@@ -30,7 +30,7 @@
 
 🎯 `1주일에 3문제 이상`을 푸는 것을 목표로 합니다.
 
-## 📅 문제 풀이 진행 일정
+## 📅 문제 풀이 진행
 
 ### 2024년 09월
 
@@ -45,4 +45,4 @@
 | 24.09.19.  | DP      | `Level 3` | [스티커 모으기][sticker-collection-2]                 | [풀이 내용 링크][sticker-collection-2-sol]              | ❌        | ✅       |
 | 24.09.19.  | 구현    | `Level 2` | [주차 요금 계산][calculate-parking-fee]               | [풀이 내용 링크][calculate-parking-fee-sol]             | ✅        | ❌       |
 | 24.09.20.  | 구현    | `Level 2` | [행렬 테두리 회전하기][rotate-matrix-edge]            | [풀이 내용 링크][rotate-matrix-edge-sol]                | ✅        | ❌       |
-| 24.09.20.  | 탐색    | `Level 2` | [연속된 부분 수열의 합][sum-of-contiguous-sequence]   | [풀이 내용 링크][rotate-matrix-edge-sol]                | 🚸        | ❌       |
+| 24.09.20.  | 탐색    | `Level 2` | [연속된 부분 수열의 합][sum-of-contiguous-sequence]   | [풀이 내용 링크][sum-of-contiguous-sequence-sol]        | 🚸        | ❌       |
