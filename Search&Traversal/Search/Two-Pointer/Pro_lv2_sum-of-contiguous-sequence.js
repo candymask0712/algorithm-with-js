@@ -1,3 +1,4 @@
+
 function solution(sequence, k){
   let lp = 0
   let rp = 0
@@ -40,6 +41,3 @@ function solution(sequence, k){
  return answer
 }
 
-console.info(solution([1, 2, 3, 4, 5], 7)) // [2,3]
-console.info(solution([1, 1, 1, 2, 3, 4, 5], 5)) // [6,6]
-console.info(solution([2, 2, 2, 2, 2], 6)) // [0,2]
