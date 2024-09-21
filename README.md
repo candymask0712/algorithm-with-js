@@ -19,6 +19,8 @@
 [rotate-matrix-edge-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/Implementation/pro_lv2_rotate-matrix-edge.js
 [sum-of-contiguous-sequence]: https://school.programmers.co.kr/learn/courses/30/lessons/77485
 [sum-of-contiguous-sequence-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/Search%26Traversal/Search/Two-Pointer/Pro_lv2_sum-of-contiguous-sequence.js
+[rank]: https://school.programmers.co.kr/learn/courses/30/lessons/49191
+[rank-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/Search%26Traversal/Search/Two-Pointer/Pro_lv2_sum-of-contiguous-sequence.js
 
 <div align="center">
   <br />
@@ -46,3 +48,4 @@
 | 24.09.19.  | 구현    | `Level 2` | [주차 요금 계산][calculate-parking-fee]               | [풀이 내용 링크][calculate-parking-fee-sol]             | ✅        | ❌       |
 | 24.09.20.  | 구현    | `Level 2` | [행렬 테두리 회전하기][rotate-matrix-edge]            | [풀이 내용 링크][rotate-matrix-edge-sol]                | ✅        | ❌       |
 | 24.09.20.  | 탐색    | `Level 2` | [연속된 부분 수열의 합][sum-of-contiguous-sequence]   | [풀이 내용 링크][sum-of-contiguous-sequence-sol]        | 🚸        | ❌       |
+| 24.09.21.  | 그래프  | `Level 3` | [순위][rank]                                          | [풀이 내용 링크][rank-sol]                              | 🚸        | ❌       |
