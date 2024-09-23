@@ -1,33 +1,31 @@
 // 나의 풀이
 function solution(n, info) {
   var answer = [];
-  const target = Array(10).fill(null)
-  
+  const target = Array(10).fill(null);
+
   function DFS(s, target) {
-      if(s === 0 || target.every(el=> el !== null)){
-          console.log(s, target)
+    if (s === 0 || target.every((el) => el !== null)) {
+      console.log(s, target);
+    }
+
+    for (let i = 0; i < n; i++) {
+      if (target[i] !== null) continue;
+
+      apeach = info[i];
+      const winTarget = target.slice();
+      const loseTarget = target.slice();
+
+      if (s >= apeach + 1) {
+        winTarget[i] = apeach + 1;
+        const newS = s - (apeach + 1);
+        DFS(s, winTarget);
       }
-      
-      for(let i=0; i<n; i++){
-          if(target[i]!==null) continue
-          
-          apeach = info[i]
-          const winTarget = target.slice()
-          const loseTarget = target.slice()
-          
-          if(s >=  apeach + 1) {
-              winTarget[i] = apeach + 1
-              const newS = s - (apeach + 1)
-              DFS(s, winTarget)
-          }
-          loseTarget[i] = 0
-          DFS(s, loseTarget)
-          
-      }
-      
+      loseTarget[i] = 0;
+      DFS(s, loseTarget);
+    }
   }
-  DFS(n, target)
-  
+  DFS(n, target);
+
   return answer;
 }
 
@@ -35,7 +33,7 @@ function solution(n, info) {
 function combinationsWithRepetition(arr, n) {
   // 기본 케이스: n이 1이면 각 요소를 단일 요소 배열로 반환
   if (n === 1) {
-    return arr.map(item => [item]);
+    return arr.map((item) => [item]);
   }
 
   // 결과를 저장할 배열
@@ -46,7 +44,7 @@ function combinationsWithRepetition(arr, n) {
     const currentItem = arr[i];
     // 현재 요소부터 끝까지의 부분 배열로 재귀 호출
     const subCombinations = combinationsWithRepetition(arr.slice(i), n - 1);
-    
+
     // 현재 요소를 각 하위 조합의 앞에 추가
     for (const subCombination of subCombinations) {
       result.push([currentItem, ...subCombination]);
@@ -55,8 +53,6 @@ function combinationsWithRepetition(arr, n) {
 
   return result;
 }
-
-
 
 function solution(n, info) {
   let maxdiff = 0;
@@ -107,4 +103,3 @@ function solution(n, info) {
     return [-1];
   }
 }
-
