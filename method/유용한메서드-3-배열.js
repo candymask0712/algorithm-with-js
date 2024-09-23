@@ -9,11 +9,12 @@
 Array(n).fill(원하는값);
 
 // 2차원 배열
-Array(h * w).fill();
+Array.from({length: n}, ()=> Array(n).fill(0))
 
 // * 참조값으로 배열 생성
-// 0~n으로 채워진 빈배열 (길이 n+1)
+// 0 ~ n으로 채워진 빈배열 (길이 n+1)
 Array.from({ length: n + 1 }, (v, i) => i + 1);
+[...Array(n + 1).keys()]
 
 // ! 배열 합치기
 // arr1 = arr1.concat(arr2)
