@@ -103,3 +103,62 @@ function solution(n, info) {
     return [-1];
   }
 }
+
+// 재풀이
+function combinationsWithRepetition(arr, n) {
+  if (n === 1) return arr.map((v) => [v]);
+  const result = [];
+
+  arr.forEach((fixed, idx, arr) => {
+    const rest = arr.slice(idx);
+    const combis = combinationsWithRepetition(rest, n - 1);
+    const combine = combis.map((v) => [fixed, ...v]);
+    result.push(...combine);
+  });
+
+  return result;
+}
+
+function solution(n, info) {
+  let maxdiff = 0;
+  let maxComb = {};
+
+  // ➊ 가능한 라이언의 과녁점수 조합의 모든 경우에 대해서 체크
+  const options = Array.from({ length: 11 }, (_, index) => index + 1);
+  console.log(options);
+  const allCases = combinationsWithRepetition(options, n);
+
+  for (let caseArr of allCases) {
+    const score = calculateScores(caseArr, info);
+    maxdiff = Math.max(maxdiff, score);
+  }
+
+  // ➋ 주어진 조합에서 각각의 점수 계산
+  function calculateScores(caseArr, info) {
+    let scores = 0;
+    const target = Array(11).fill(0);
+    caseArr.forEach((score) => {
+      target[score] += 1;
+    });
+    // console.table(target)
+    target.forEach((score, index) => {
+      const rScore = score;
+      const aScore = info[index];
+      if (rScore === 0 && aScore === 0) {
+      } else if (rScore > aScore) scores += 10 - index;
+      else scores -= 10 - index;
+      // console.info(rScore, aScore, score)
+    });
+    // console.log(scores)
+    if (scores === 34) {
+      console.info(target);
+    }
+    return scores;
+  }
+  // ➌ 최대 차이와 조합 저장
+  // ➍ 최대 차이가 0 이상인 경우, 조합 반환
+
+  console.log(maxdiff);
+}
+
+console.info(solution(5, [2, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0]));

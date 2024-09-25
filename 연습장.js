@@ -1,157 +1,137 @@
-// ! 투포인터 문제
-// function solution(sequence, k){
-//   let lp = 0
-//   let rp = 0
-//   let sum = sequence[0]
-//   let length=Number.MAX_SAFE_INTEGER;
-//   let answer = []
+// function solution(arr, k) {
+//   const n = arr.length;
+//   // 문제에 따라 답의 형식 수정
+//   const answer = [];
+//   // 최초의 합계는 0번째 인덱스의 요소로 한다
+//   let sum = arr[0];
+//   let lp = 0,
+//     rp = 0;
 
-//   const n = sequence.length
-//   let cnt = 0
-//   while(lp < n && rp < n) {
-//     cnt++
-//     // console.info(lp, rp, sum, length, answer)
-//     // console.info(sum)
-//     if(sum === k) {
-//       if(rp-lp < length) {
-//         answer = [lp, rp]
-//         length = rp - lp
-
+//   // 오른쪽 포인터가 배열의 길이를 초과하면 끝난다
+//   let cnt = 0;
+//   while ((rp < n || lp < n) && cnt < 1000) {
+//     console.info(lp, rp, sum);
+//     cnt++;
+//     // 경우1. sum < k
+//     if (sum <= k) {
+//       // 오른쪽 포인터를 움직여 새로운 요소를 더해줌
+//       if (rp < n) {
+//         answer.push(sum);
+//         sum += arr[rp + 1];
 //       }
-//       sum -= sequence[lp]
-//       lp++
-//     }
-//     else if (sum > k) {
-//       // if(sequence[lp] < sequence[lp+1]) {
-//       //   rp = lp
-//       //   sum = sequence[lp]
-//       // } else {
-//       //   sum -= sequence[lp]
-//       //   lp += 1
-//       // }
-//       sum -= sequence[lp]
-//       lp++
-//     }
-//     else  {
-//       rp++
-//       sum += sequence[rp]
-
+//       rp++;
+//       // 경우2. sum > k
+//     } else {
+//       // 왼쪽 포인터를 움직여 기존 요소를 빼줌
+//       lp++;
+//       rp = lp;
+//       sum = arr[lp];
+//       // 경우3. sum === k
 //     }
 //   }
-//  return answer
+//   console.info(answer);
+//   return answer.length;
 // }
 
-// console.info(solution([1, 2, 3, 4, 5], 7)) // [2,3]
-// console.info(solution([1, 1, 1, 2, 3, 4, 5], 5)) // [6,6]
-// console.info(solution([2, 2, 2, 2, 2], 6)) // [0,2]
+// ! 나의 풀이
+// function solution(arr, k) {
+//   let answer = 0;
+//   const n = arr.length;
 
-// ! 체스 문제
-// function solution(n){
-//   let answer = 0
-
-//   const chessboard = Array.from({length: n}, ()=> Array(n).fill(0))
-//   console.log(chessboard)
-
-//   function DFS(queenNum, start){
-//     console.table(JSON.parse(JSON.stringify(chessboard)))
-//     if(queenNum === 4){
-//       answer++
-//     }else{
-//       for(let i=start[0]; i<n; i++){
-//         for(let j=start[1]; j<n; j++){
-//           if(chessboard[i][j] === 0 && isValidPosition(i,j,n, chessboard)) {
-//             chessboard[i][j] = 1
-//             DFS(queenNum + 1, [i, j+1])
-//             chessboard[i][j] = 0
-//           }
-//         }
-//       }
+//   for (let lp = 0; lp < n; lp++) {
+//     let sum = arr[lp];
+//     let rp = 0;
+//     while (sum <= k) {
+//       console.log(lp, rp, sum, answer);
+//       answer++;
+//       sum += arr[++rp];
 //     }
-//    }
-//    DFS(0, [0,0])
-
-//   return answer
-// }
-
-// function isValidPosition(i, j, n, chessboard) {
-//   // for(let a=i-n; a<=i+n; a++){
-//   //   for(let b=j-n; b<=j+n; b++){
-//   //     if(a>=0 && a<n && b>=0&& b<n) {
-//   //       if(chessboard[a][b] === 1) return false
-//   //     }
-//   //   }
-//   // }
-//   const isValid = (x,y) => x>=0 && x<n && y>=0 && y<n
-//   for(let k=0; k<n; k++){
-//    if(chessboard[i][k] || chessboard[k][j]) return false
-//    if(isValid(i-k, j-k) && chessboard[i-k][j-k]) return false
-//    if(isValid(i+k, j+k) && chessboard[i+k][j+k]) return false
-//    if(isValid(i+k, j-k) && chessboard[i+k][j-k]) return false
-//    if(isValid(i-k, j+k) && chessboard[i-k][j+k]) return false
 //   }
-//   return true
+
+//   return answer;
 // }
 
-// console.info(solution(4))
+// ! 인프런 해설
+// // ! lt 부터 rt 까지의 부분수열을 구하는 코드
+// function solution(arr, m) {
+//   let answer = 0,
+//     sum = 0,
+//     lt = 0;
 
-function combinationsWithRepetition(arr, n) {
-  if (n === 1) return arr.map((v) => [v]);
-  const result = [];
+//   // ! 루프가 rt=0 부터 시작해서 돈다
+//   for (let rt = 0; rt < arr.length; rt++) {
+//     // ! 먼저 rt번째 원소를 더한다
+//     sum += arr[rt];
+//     // ! 만약 합계가 기준보다 크다면
+//     // ! 계속해서 lt 포인터를 이동하고 lt만큼 빼준다
+//     while (sum > m) {
+//       sum -= arr[lt++];
+//     }
+//     // ! rt +1 의 숫자만큼 연속부분수열 만들수 있다
+//     // ! 그러나 lt 만큼 이동했다면 빼주어야 함
+//     answer += rt - lt + 1;
+//   }
+//   return answer;
+// }
 
-  arr.forEach((fixed, idx, arr) => {
-    const rest = arr.slice(idx);
-    const combis = combinationsWithRepetition(rest, n - 1);
-    const combine = combis.map((v) => [fixed, ...v]);
-    result.push(...combine);
-  });
+// console.info(solution([1, 3, 1, 2, 3], 5)); // 10
+// console.info(solution([1, 1, 1, 1, 1], 3)); // 12
+// console.info(solution([5, 5, 5, 5, 5], 5)); // 5
+// console.info(solution([1, 2, 3, 4, 5], 5)); // 7
+// console.info(solution([1, 2, 3, 4, 5], 15)); // 15
+// console.info(solution([1], 1)); // 1
+// console.info(solution([1000], 999)); // 0
+// console.info(solution([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 10)); // 17
+// console.info(solution([1, 1, 1, 1, 1, 1, 1, 1, 1, 1], 5)); // 40
 
-  return result;
+function solution(arr1, arr2) {
+  arr1.sort((a, b) => a - b);
+  arr2.sort((a, b) => a - b);
+  let p1 = 0;
+  let p2 = 0;
+  const n = arr1.length;
+  const m = arr2.length;
+  let answer = [];
+  let tmp = 0;
+
+  while (p1 < n && p2 < m && tmp < 100) {
+    const e1 = arr1[p1];
+    const e2 = arr2[p2];
+    if (e1 === e2) {
+      answer.push(e1);
+      if (p1 < n) p1++;
+      if (p2 < m) p2++;
+    }
+
+    if (e1 < e2) p1++;
+    else p2++;
+  }
+  return answer;
 }
+console.info(solution([1, 3, 9, 5, 2], [3, 2, 5, 7, 8]));
 
+function solution(arr1, arr2) {
+  let p1 = 0;
+  let p2 = 0;
+  const n = arr1.length;
+  const m = arr2.length;
+  let answer = [];
+  let tmp = 0;
 
-function solution(n, info) {
-  let maxdiff = 0;
-  let maxComb = {};
+  while (p1 < n && p2 < m && tmp < 100) {
+    tmp++;
+    const e1 = arr1[p1];
+    const e2 = arr2[p2];
+    if (e1 === e2) {
+      answer.push(e1);
+      if (p1 < n) p1++;
+      if (p2 < m) p2++;
+    }
 
-  // ➊ 가능한 라이언의 과녁점수 조합의 모든 경우에 대해서 체크 
- const options = Array.from({length: 11}, (_, index) => index + 1)
- console.log(options)
- const allCases = combinationsWithRepetition(options, n)   
- 
- for(let caseArr of allCases) {
-  const score = calculateScores(caseArr, info)
-  maxdiff = Math.max(maxdiff, score)
- }
-    
-  // ➋ 주어진 조합에서 각각의 점수 계산
-  function calculateScores(caseArr, info) {
-      let scores = 0
-      const target = Array(11).fill(0)
-      caseArr.forEach(score => {
-        target[score] += 1
-      })
-      // console.table(target)
-      target.forEach((score, index) => {
-          const rScore = score
-          const aScore = info[index]
-          if(rScore === 0 && aScore ===0) {
+    if (e1 < e2) p1++;
+    else p2++;
+  }
 
-          }
-          else if(rScore > aScore) scores += 10 - index
-          else scores -= 10 - index
-          // console.info(rScore, aScore, score)
-      })
-      // console.log(scores)
-      if(scores === 34) {
-        console.info(target)
-      }
-      return scores
-  }  
-  // ➌ 최대 차이와 조합 저장
-  // ➍ 최대 차이가 0 이상인 경우, 조합 반환
-
-
-  console.log(maxdiff)
+  return answer;
 }
-
-console.info(solution(5, [2,1,1,1,0,0,0,0,0,0,0]))
+console.info(solution([1, 3, 9, 5, 2], [3, 2, 5, 7, 8]));

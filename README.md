@@ -21,10 +21,12 @@
 [sum-of-contiguous-sequence-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/Search%26Traversal/Search/Two-Pointer/Pro_lv2_sum-of-contiguous-sequence.js
 [rank]: https://school.programmers.co.kr/learn/courses/30/lessons/49191
 [rank-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/Search%26Traversal/Search/Two-Pointer/Pro_lv2_sum-of-contiguous-sequence.js
+[n-queen]: https://school.programmers.co.kr/learn/courses/30/lessons/49191
+[n-queen-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/Search%26Traversal/Search/Two-Pointer/Pro_lv2_sum-of-contiguous-sequence.js
 [tiredness]: https://school.programmers.co.kr/learn/courses/30/lessons/87946?language=javascript
 [tiredness-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/Search%26Traversal/Search/Two-Pointer/Pro_lv2_sum-of-contiguous-sequence.js
-[archery_competition]: https://school.programmers.co.kr/learn/courses/30/lessons/87946?language=javascript
-[archery_competition-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/Search%26Traversal/Search/Two-Pointer/pro_lv2_archery_competition
+[archery-competition]: https://school.programmers.co.kr/learn/courses/30/lessons/87946?language=javascript
+[archery-competition-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/Search%26Traversal/Search/Two-Pointer/pro_lv2_archery_competition
 
 <div align="center">
   <br />

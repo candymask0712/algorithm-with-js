@@ -1,7 +1,7 @@
 function combinationsWithRepetition(arr, n) {
   // 기본 케이스: n이 1이면 각 요소를 단일 요소 배열로 반환
   if (n === 1) {
-    return arr.map(item => [item]);
+    return arr.map((item) => [item]);
   }
 
   // 결과를 저장할 배열
@@ -15,7 +15,9 @@ function combinationsWithRepetition(arr, n) {
 
     // 현재 요소를 각 하위 조합의 앞에 추가
     for (const subCombination of subCombinations) {
-      result.push([currentItem, ...subCombination]);
+      const newCombination = [currentItem, ...subCombination];
+      console.log(currentItem, subCombination, newCombination);
+      result.push(newCombination);
     }
   }
 
@@ -25,10 +27,11 @@ function combinationsWithRepetition(arr, n) {
 function combinationsWithoutRepetition(arr, n) {
   // 기본 케이스: n이 1이면 각 요소를 단일 요소 배열로 반환
   if (n === 1) {
-    return arr.map(item => [item]);
+    return arr.map((item) => [item]);
   }
 
   // n이 배열의 길이보다 크면 빈 배열 반환
+  // ! 반복 불가 시의 차이점
   if (n > arr.length) {
     return [];
   }
@@ -41,7 +44,10 @@ function combinationsWithoutRepetition(arr, n) {
     const currentItem = arr[i];
     // 현재 요소 다음부터 끝까지의 부분 배열로 재귀 호출
     // ! 'i + 1'이 중복을 허용하지 않는 부분
-    const subCombinations = combinationsWithoutRepetition(arr.slice(i + 1), n - 1);
+    const subCombinations = combinationsWithoutRepetition(
+      arr.slice(i + 1),
+      n - 1
+    );
 
     // 현재 요소를 각 하위 조합의 앞에 추가
     for (const subCombination of subCombinations) {
@@ -56,7 +62,7 @@ function combinationsWithoutRepetition(arr, n) {
 function permutationsWithRepetition(arr, n) {
   // 기본 케이스: n이 1이면 각 요소를 단일 요소 배열로 반환
   if (n === 1) {
-    return arr.map(item => [item]);
+    return arr.map((item) => [item]);
   }
 
   // 결과를 저장할 배열
@@ -86,7 +92,7 @@ function permutationsWithoutRepetition(arr, n) {
 
   // 기본 케이스: n이 1이면 각 요소를 단일 요소 배열로 반환
   if (n === 1) {
-    return arr.map(item => [item]);
+    return arr.map((item) => [item]);
   }
 
   // 결과를 저장할 배열
@@ -97,7 +103,10 @@ function permutationsWithoutRepetition(arr, n) {
     const currentItem = arr[i];
     // 현재 요소를 제외한 나머지 배열로 재귀 호출 (중복 방지)
     const remainingItems = [...arr.slice(0, i), ...arr.slice(i + 1)];
-    const subPermutations = permutationsWithoutRepetition(remainingItems, n - 1);
+    const subPermutations = permutationsWithoutRepetition(
+      remainingItems,
+      n - 1
+    );
 
     // 현재 요소를 각 하위 순열의 앞에 추가
     for (const subPermutation of subPermutations) {
