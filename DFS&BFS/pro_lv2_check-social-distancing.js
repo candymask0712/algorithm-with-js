@@ -1,3 +1,5 @@
+// * 나의 풀이
+
 function solution(places) {
   let answer = Array(5).fill(1);
 
