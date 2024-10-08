@@ -49,12 +49,13 @@ rl.on('line', function (line) {
 });
 
 function solution(N) {
-  const dp = Array(N + 1).fill(0);
+  const dp = Array.from({ length: N + 1 }, () => 0);
+  dp[0] = 1;
   dp[1] = 1;
   dp[2] = 1;
-  dp[3] = 1;
-  for (let i = 4; i <= N; i++) {
+  for (let i = 3; i < N; i++) {
     dp[i] = dp[i - 2] + dp[i - 3];
   }
-  return dp[N];
+
+  return dp[N - 1];
 }

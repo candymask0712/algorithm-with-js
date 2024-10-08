@@ -12,10 +12,13 @@
 
 ### 2024년 10월
 
-|   날짜    | 유형 |   난이도   |            문제            |            나의 풀이            | 풀이 결과 | 추가 학습 |
-| :-------: | :--: | :--------: | :------------------------: | :-----------------------------: | :-------: | :-------: |
-| 24.10.08. |  DP  | `sliver 3` | [피보나치 함수][fibo-func] | [풀이 내용 링크][fibo-func-sol] |    ✅     |    ✅     |
-| 24.10.08. |  DP  | `sliver 3` |    [01타일][fibo-func]     | [풀이 내용 링크][fibo-func-sol] |    ✅     |    ✅     |
+|   날짜    | 유형 |   난이도   |              문제              |               나의 풀이                | 풀이 결과 | 추가 학습 |
+| :-------: | :--: | :--------: | :----------------------------: | :------------------------------------: | :-------: | :-------: |
+| 24.10.08. |  DP  | `sliver 3` |   [피보나치 함수][fibo-func]   |    [풀이 내용 링크][fibo-func-sol]     |    ✅     |    ✅     |
+| 24.10.08. |  DP  | `sliver 3` |      [01타일][fibo-func]       |     [풀이 내용 링크][01-tile-sol]      |    ✅     |    ✅     |
+| 24.10.08. |  DP  | `sliver 1` |   [포도주시식][wine-tasting]   |   [풀이 내용 링크][wine-tasting-sol]   |    ✅     |    ❌     |
+| 24.10.08. |  DP  | `sliver 3` |      [01타일][fibo-func]       |     [풀이 내용 링크][01-tile-sol]      |    ✅     |    ✅     |
+| 24.10.08. |  DP  | `sliver 3` | [파도반수열][padoban-sequence] | [풀이 내용 링크][padoban-sequence-sol] |    ✅     |           |
 
 ### 2024년 09월
 
@@ -40,7 +43,11 @@
 [fibo-func]: https://www.acmicpc.net/problem/1003
 [fibo-func-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/DP/fast-dp-01/beak_s3_1003_fibonacci-func.js
 [01-tile]: https://www.acmicpc.net/problem/1904
-[01-tilec-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/DP/fast-dp-01/beak_s3_1904_01-tile.js
+[01-tile-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/DP/fast-dp-01/beak_s3_1904_01-tile.js
+[wine-tasting]: https://www.acmicpc.net/problem/1904
+[wine-tasting-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/DP/fast-dp-01/beak_s1_2156_wine-tasting.js
+[padoban-sequence]: https://www.acmicpc.net/problem/1904
+[padoban-sequence-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/DP/fast-dp-01/beak_s3_9461_padoban-sequence.js
 [//]: # 'URL 변수 정의 - 24년 09월'
 [func-dev]: https://school.programmers.co.kr/learn/courses/30/lessons/42586
 [func-dev-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/Stack%26Queue/Queue/pro_lv2_function-development.js
