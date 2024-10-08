@@ -58,3 +58,13 @@
 | 24.09.22. | 백트랙킹 | `Level 3` |                                                     |                                                  |    ❌     |    ❌     |
 | 24.09.22. | 백트랙킹 | `Level 2` |                 [피로도][tiredness]                 |            [풀이 내용 링크][rank-sol]            |    ❌     |    ❌     |
 | 24.09.22. | 백트랙킹 | `Level 2` |                [양궁대회][tiredness]                |            [풀이 내용 링크][rank-sol]            |    ❌     |    ❌     |
+
+### 2024년 10월
+
+|   날짜    | 유형 |   난이도   |          문제          |            나의 풀이            | 풀이 결과 | 추가 학습 |
+| :-------: | :--: | :--------: | :--------------------: | :-----------------------------: | :-------: | :-------: |
+| 24.10.08. |  DP  | `sliver 3` | [기능 개발][fibo-func] | [풀이 내용 링크][fibo-func-sol] |    ✅     |    ✅     |
+
+[//]: # 'URL 변수 정의'
+[fibo-func]: https://www.acmicpc.net/problem/1003
+[fibo-func-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/Search%26Traversal/Search/Two-Pointer/pro_lv2_archery_competition
