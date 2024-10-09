@@ -18,7 +18,8 @@
 | 24.10.08. |  DP  | `sliver 3` |      [01타일][fibo-func]       |     [풀이 내용 링크][01-tile-sol]      |    ✅     |    ✅     |
 | 24.10.08. |  DP  | `sliver 1` |   [포도주시식][wine-tasting]   |   [풀이 내용 링크][wine-tasting-sol]   |    ✅     |    ❌     |
 | 24.10.08. |  DP  | `sliver 3` |      [01타일][fibo-func]       |     [풀이 내용 링크][01-tile-sol]      |    ✅     |    ✅     |
-| 24.10.08. |  DP  | `sliver 3` | [파도반수열][padoban-sequence] | [풀이 내용 링크][padoban-sequence-sol] |    ✅     |           |
+| 24.10.08. |  DP  | `sliver 3` | [파도반수열][integer-triangle] | [풀이 내용 링크][padoban-sequence-sol] |    ✅     |    ✅     |
+| 24.10.09. |  DP  | `sliver 1` | [정수삼각형][integer-triangle] | [풀이 내용 링크][integer-triangle-sol] |    ✅     |    ❌     |
 
 ### 2024년 09월
 
@@ -48,6 +49,8 @@
 [wine-tasting-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/DP/fast-dp-01/beak_s1_2156_wine-tasting.js
 [padoban-sequence]: https://www.acmicpc.net/problem/1904
 [padoban-sequence-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/DP/fast-dp-02/beak_s3_9461_padoban-sequence.js
+[integer-triangle]: https://www.acmicpc.net/problem/1932
+[integer-triangle-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/DP/fast-dp-02/beak_s1_1932_integer-triangle.js
 [//]: # 'URL 변수 정의 - 24년 09월'
 [func-dev]: https://school.programmers.co.kr/learn/courses/30/lessons/42586
 [func-dev-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/Stack%26Queue/Queue/pro_lv2_function-development.js
