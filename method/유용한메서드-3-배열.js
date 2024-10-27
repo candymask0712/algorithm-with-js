@@ -9,12 +9,12 @@
 Array(n).fill(원하는값);
 
 // 2차원 배열
-Array.from({length: n}, ()=> Array(n).fill(0))
+Array.from({ length: n }, () => Array(n).fill(0));
 
 // * 참조값으로 배열 생성
 // 0 ~ n으로 채워진 빈배열 (길이 n+1)
 Array.from({ length: n + 1 }, (v, i) => i + 1);
-[...Array(n + 1).keys()]
+[...Array(n + 1).keys()];
 
 // ! 배열 합치기
 // arr1 = arr1.concat(arr2)
@@ -24,23 +24,17 @@ Array.from({ length: n + 1 }, (v, i) => i + 1);
 // unshift, shift - 처음에서 넣기, 꺼내기
 
 // ! 배열 정렬
-// arr.sort()
+// * arr.sort()
 // sort()는 기본적으로 오름차순 정렬 (1-9, a-z, A-Z, 문자는 대문자 -> 소문자 순서 (A-Z가 a-z 보다 앞에 위치))
 // 유니코드 코드 포인트 순서에 따라 정렬
 
-// 비교함수
+// * 비교함수
 // arr.sort([compareFunction])
+// 현재 a는 앞에 있는 숫자, b는 뒤에 있는 숫자
 // 반환값이 0보다 작다면 a를 b보다 낮은 색인에 배치 (a가 b보다 먼저 나옴)
 // 반환값이 0이라면 a와 b의 순서를 변경하지 않음
 // 반환값이 0보다 크다면 b를 a보다 낮은 색인에 배치 (b가 a보다 먼저 나옴)
 
-// 2차원 배열
-// arr.sort((a, b) => {
-//   if (a[0] === b[0]) return a[1] - b[1];
-//   else return a[0] - b[0];
-// });
-
-// 문자 정렬
 // 뺄셈 정렬이 안되 비교 정렬로 바꿔서 풀이
 // sort((a,b)=>{
 //   if (a > b) return -1;
@@ -48,6 +42,14 @@ Array.from({ length: n + 1 }, (v, i) => i + 1);
 //   else return 0;
 // }
 
+// * 다중조건
+// 2차원 배열
+// arr.sort((a, b) => {
+//   if (a[0] === b[0]) return a[1] - b[1];
+//   else return a[0] - b[0];
+// });
+
+// * 문자 정렬
 //  a.localeCompare(b) : a, b의 사전순에 따라 값 배출
 //  a가 앞서는 단어면 -1 또는 -2
 //  b가 앞서는 단어면  1 또는 2
