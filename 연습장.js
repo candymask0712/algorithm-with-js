@@ -1,38 +1,33 @@
-<<<<<<< HEAD
-function solution(n, distances, prices) {
-  return prices.reduce((acc, price, index) => {
-    console.info(acc, price, index)
-      
-      if(index === prices.length -1) return acc
-      else return acc + distances[index]*price
-  }, 0)
+function solution(n, meetings) {
+  meetings.sort((a,b)=>{
+    if(a[1] === b[1]) return a[0] - b[0]
+    return a[1] - b[1]
+  })
+  let answer = 0
+  let current = 0
+  for(let i=0; i<n; i++){
+    const [start, end] = meetings[i]
+    if(start >= current) {
+      current = end
+      answer++
+    }  
+  }
+  return answer
 }
 
-console.info(solution(4, [2,3,1], [5,2,4,1])) // 18
-console.info(solution(4, [3,3,4], [1,1,1,1])) // 10
-=======
-const readline = require('readline');
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
+// 예시 입력에 대한 테스트
+const testInput = [
+  [1, 4],
+  [3, 5],
+  [0, 6],
+  [5, 7],
+  [3, 8],
+  [5, 9],
+  [6, 10],
+  [8, 11],
+  [8, 12],
+  [2, 13],
+  [12, 14]
+];
 
-let input = [];
-
-rl.on('line', function (line) {
-  input.push(line);
-}).on('close', function () {
-  console.log(solution(input));
-  process.exit();
-});
-
-function solution(input) {
-  const N = parseInt(input[0]);
-  const costs = input.slice(1).map((line) => line.split(' ').map(Number));
-
-  // 여기에 문제 해결 로직을 구현하세요
-
-  // 예시 반환값 (실제 로직에 맞게 수정 필요)
-  return 0;
-}
->>>>>>> 65bfa5f22d938f6e4477e45b2a7bbc88f301303a
+console.info(solution(11, testInput)); // 4
