@@ -6,7 +6,7 @@
   <br />
 </div>
 
-🎯 `한달에 10문제 이상`을 푸는 것을 목표로 합니다.
+🎯 `한달에 10문제 이상`을 푸는 것을 목표로 하고 있습니다.
 
 ## 📅 문제 풀이 진행
 
@@ -22,6 +22,8 @@
 | 24.10.09. |  DP  | `sliver 1` |  [정수삼각형][integer-triangle]  | [풀이 내용 링크][integer-triangle-sol] |    ✅     |    ❌     |
 | 24.10.09. |  DP  | `sliver 4` | [연속부분최대곱][continuous-max] |  [풀이 내용 링크][continuous-max-sol]  |    ✅     |    ❌     |
 | 24.10.09. |  DP  | `sliver 1` |     [극장좌석][theater-seat]     |   [풀이 내용 링크][theater-seat-sol]   |    ✅     |    ❌     |
+| 24.10.21. |  DP  | `sliver 1` |   [1로만들기][changing-to-one]   | [풀이 내용 링크][changing-to-one-sol]  |    ✅     |    ❌     |
+| 24.10.22. |  DP  | `sliver 1` |   [쉬운계단수][easy-stair-num]   |  [풀이 내용 링크][easy-stair-num-sol]  |    ✅     |    ❌     |
 
 ### 2024년 09월
 
@@ -57,6 +59,10 @@
 [continuous-max-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/DP/fast-dp-03/beak_s1_2670_continuous-max.js
 [theater-seat]: https://www.acmicpc.net/problem/1932
 [theater-seat-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/DP/fast-dp-03/beak_s1_2302_theater-seat
+[changing-to-one]: https://www.acmicpc.net/problem/1463
+[changing-to-one-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/DP/fast-dp-04/beak_s3_1463_changing-to-one
+[easy-stair-num]: https://www.acmicpc.net/problem/10844
+[easy-stair-num-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/DP/fast-dp-04/beak_s3_1463_changing-to-one
 [//]: # 'URL 변수 정의 - 24년 09월'
 [func-dev]: https://school.programmers.co.kr/learn/courses/30/lessons/42586
 [func-dev-sol]: https://github.com/candymask0712/algorithm-with-js/blob/main/Stack%26Queue/Queue/pro_lv2_function-development.js
