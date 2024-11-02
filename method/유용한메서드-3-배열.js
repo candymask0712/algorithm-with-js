@@ -99,5 +99,3 @@ const allAdults = ages.every((age) => age >= 18);
 console.log(allAdults); // true
 
 // find - 주어진 테스트 함수를 만족하는 배열의 첫번째 요소를 반환, 만족하는 요소가 없으면 undefined를 반환
-s;
-s;
