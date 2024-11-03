@@ -1,10 +1,7 @@
-/**
- * @param {string} s
- * @param {number} numRows
- * @return {string}
- */
+// * 나의 풀이
+
 var convert = function (s, numRows) {
-  if (numRow === 1) return s;
+  if (numRows === 1) return s;
   const arr = Array.from({ length: numRows }, () => []);
 
   let isAsc = true;
@@ -17,13 +14,10 @@ var convert = function (s, numRows) {
   }
 
   return arr.flat().join('');
-  // console.log(arr)
 };
-/**
- * @param {string} s
- * @param {number} numRows
- * @return {string}
- */
+
+// * 좋은 풀이
+
 function convert(s, numRows) {
   // 행이 1이거나 문자열 길이가 numRows보다 작으면 원래 문자열 반환
   if (numRows === 1 || s.length <= numRows) {
