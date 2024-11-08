@@ -10,7 +10,7 @@
 // 이름.add(value) - 추가
 // 이름.size - 길이 구하기
 // 이름.delete(value) - 삭제
-// 이름.clear(value) - 모든요소 제거
+// 이름.clear(value) - 모든 요소 제거
 // 이름.has(value) - boolean 반환
 // 이름.forEach(callbackFn[, thisArg]) - 삽입 순으로 Set 객체 내에 있는 각 값에 대해 한 번 callbackFn을 호출합니다. thisArg 매개변수가 forEach에 제공된 경우, 이는 각 콜백에 대해 this 값으로 사용됩니다.
 // let arr = Array.from(이름) - set 객체의 배열화
