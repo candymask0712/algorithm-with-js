@@ -76,3 +76,11 @@ console.info('ABCDE'.slice(1)); // 'BCDE'
 // str.split('')
 // [...'str']
 // [...'abc'] => ['a','b','c']
+
+// ! toString()과 String()의 차이
+// * String()
+// 입력값의 타입(null, undefined)이 불확실할 때
+
+// * toString()
+// 숫자의 진수 변환이 필요할 때
+// 값이 항상 존재함을 보장하고 싶을 때 (null, undefined 입력 시 에러 발생)
