@@ -45,8 +45,14 @@
 // regExp.test(target) // true
 
 // ! 자주 사용하는 정규식
-// * 공백제거
+// * 띄어쓰기 제거
 // str = str.replace(/ /g, '');
+
+// * 한 개 이상의 공백문자를 한 개로 치환 (스페이스, 탭, 줄바꿈 등)
+// str = str.replace(/\s+/gi, ' ')
+
+// * 한 개 이상의 띄어쓰기를 한 개로 치환
+// str = str.replace(/ +/gi, ' ')
 
 // * 알파벳 소문자만 남기기
 // s = s.toLowerCase().replace(/[^a-z]/g, '');
