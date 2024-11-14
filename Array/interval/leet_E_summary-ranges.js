@@ -28,6 +28,7 @@ var summaryRanges = function (nums) {
   return answer;
 };
 
+// 참고 풀이
 function summaryRanges(nums) {
   const result = [];
 
@@ -53,3 +54,26 @@ function summaryRanges(nums) {
 
   return result;
 }
+
+// * 나의 풀이 - 2
+var summaryRanges = function (nums) {
+  const answer = [];
+  const n = nums.length;
+  if (n === 0) return answer;
+
+  let startIndex = 0;
+
+  for (let i = 0; i < n; i++) {
+    // ! 앞 인덱스에서 체크한다는 생각을 못하고 뒷 인덱스에서 체크하려고 함
+    if (i === n - 1 || nums[i + 1] !== nums[i] + 1) {
+      // ! 요소가 아닌 인덱스를 range에 넣어줘서 실패
+      // answer.push(String(i));
+      if (i === startIndex) answer.push(String(nums[i]));
+      // ! 요소가 아닌 인덱스를 range에 넣어줘서 실패
+      // answer.push(`${startIndex}->${i}`);
+      else answer.push(`${nums[startIndex]}->${nums[i]}`);
+      startIndex = i + 1;
+    }
+  }
+  return answer;
+};
