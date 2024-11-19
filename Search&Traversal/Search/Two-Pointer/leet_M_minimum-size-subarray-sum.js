@@ -47,3 +47,22 @@ var minSubArrayLen = function (target, nums) {
 
   return minLength === Infinity ? 0 : minLength;
 };
+
+// 나의 풀이 - 2
+var minSubArrayLen = function (target, nums) {
+  const n = nums.length;
+  let lp = 0;
+  let sum = 0;
+  let minLength = Infinity;
+
+  for (let rp = 0; rp < n; rp++) {
+    sum += nums[rp];
+    while (sum >= target) {
+      minLength = Math.min(rp - lp + 1, minLength);
+      sum -= nums[lp];
+      lp++;
+    }
+  }
+
+  return minLength === Infinity ? 0 : minLength;
+};
