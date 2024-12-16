@@ -18,8 +18,9 @@ function solution(food) {
 function solution(food) {
   let res = '';
   for (let i = 1; i < food.length; i++) {
+    // Math.floor로 1이하와 홀수 경우 한번에 처리
     res += String(i).repeat(Math.floor(food[i] / 2));
   }
-
+  // 문자열을 ... 연산자로 배열화
   return res + '0' + [...res].reverse().join('');
 }
