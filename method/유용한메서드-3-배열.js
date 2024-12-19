@@ -13,8 +13,22 @@ Array.from({ length: n }, () => Array(n).fill(0));
 
 // * 참조값으로 배열 생성
 // 0 ~ n으로 채워진 빈배열 (길이 n+1)
-Array.from({ length: n + 1 }, (v, i) => i + 1);
+Array.from({ length: n + 1 }, (_, i) => i + 1);
 [...Array(n + 1).keys()];
+
+// * Array.from
+// 1. 첫 번째 인자가 배열인 경우
+const arr = Array.from([10, 20, 30], (value, index) => value * 2); // [20, 40, 60]
+
+// 2. 첫 번째 인자가 유사 배열 객체인 경우
+Array.from({ 0: 'a', 1: 'b', length: 2 }, (value, index) => value || index); // ['a', 'b']
+
+// 3. 첫 번째 인자가 문자열인 경우
+Array.from('hello', (value) => value.toUpperCase()); // ['H', 'E', 'L', 'L', 'O']
+
+// 4. 첫 번째 인자가 Map 또는 Set인 경우
+const set = new Set([1, 2, 3]);
+Array.from(set, (value) => value * 2); // [2, 4, 6]
 
 // ! 배열의 접근
 // * arr.at(인덱스) : 음수 인덱스도 가능
