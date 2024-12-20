@@ -98,23 +98,38 @@ Array.from(set, (value) => value * 2); // [2, 4, 6]
 // continue - 중간에 해당 요소만 건너뛰고 반복문 진행
 // https://mainia.tistory.com/934
 
+// 배열 메서드에서는 중단은 불가
+// skip을 위해 return 사용
+
 // ! 배열 평탄화
 // arr.flat([depth]). [depth]는 옵션(기본값은 1)
 
 // ! 요소 찾기
 // includes - 배열이 특정요소를 포함하고 있는지 확인, boolean을 반환
-const fruits = ['apple', 'banana', 'mango', 'orange'];
-const includesBanana = fruits.includes('banana');
-console.log(includesBanana); // true
+['apple', 'banana', 'mango', 'orange'].includes('banana'); // true
 
 // some - 배열의 하나 이상의 요소가 주어진 함수에 의해 구현된 테스트를 통과하는지 확인, boolean을 반환
-const numbers = [1, 3, 5, 7, 9];
-const hasOddNumber = numbers.some((number) => number % 2 !== 0);
-console.log(hasOddNumber); // true
+[1, 3, 5, 7, 9].some((number) => number % 2 !== 0); // true
 
-// some - 배열의 모든 요소가 주어진 함수에 의해 구현된 테스트를 통과하는지 확인, boolean을 반환
-const ages = [18, 20, 22, 25, 30];
-const allAdults = ages.every((age) => age >= 18);
-console.log(allAdults); // true
+// every - 배열의 모든 요소가 주어진 함수에 의해 구현된 테스트를 통과하는지 확인, boolean을 반환
+[18, 20, 22, 25, 30].every((age) => age >= 18); // true
 
-// find - 주어진 테스트 함수를 만족하는 배열의 첫번째 요소를 반환, 만족하는 요소가 없으면 undefined를 반환
+// find - 주어진 테스트 함수를 만족하는 배열의 첫 번째 요소를 반환, 만족하는 요소가 없으면 undefined를 반환
+[10, 15, 20, 25].find((number) => number % 2 === 0); // 10
+
+// findIndex - 주어진 테스트 함수를 만족하는 배열의 첫 번째 요소의 인덱스를 반환, 만족하는 요소가 없으면 -1을 반환
+[10, 15, 20, 25].findIndex((number) => number % 2 === 0); // 0
+
+// filter - 주어진 함수의 조건을 만족하는 모든 요소를 배열로 반환
+const oddNumbers = numbers.filter((number) => number % 2 !== 0); // [15, 25]
+
+// indexOf - 배열에서 특정 요소의 첫 번째 인덱스를 반환, 요소가 없으면 -1을 반환
+['apple', 'banana', 'mango'].indexOf('banana'); // 1
+
+// lastIndexOf - 배열에서 특정 요소의 마지막 인덱스를 반환, 요소가 없으면 -1을 반환
+['apple', 'banana', 'apple', 'mango'].lastIndexOf('apple'); // 2
+
+// at - 배열의 양수 또는 음수 인덱스에 위치한 요소를 반환
+const fruits = ['apple', 'banana', 'mango'];
+fruits.at(1); // 'banana'
+fruits.at(-1); // 'mango'
