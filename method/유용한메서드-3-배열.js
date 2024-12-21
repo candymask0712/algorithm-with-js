@@ -1,5 +1,5 @@
 // ! ✨✨✨✨✨✨✨✨✨✨
-// ! ✨✨✨✨배열✨✨✨✨.
+// ! ✨✨✨✨배열✨✨✨✨
 // ! ✨✨✨✨✨✨✨✨✨✨
 
 // ! 배열 생성
@@ -13,8 +13,27 @@ Array.from({ length: n }, () => Array(n).fill(0));
 
 // * 참조값으로 배열 생성
 // 0 ~ n으로 채워진 빈배열 (길이 n+1)
-Array.from({ length: n + 1 }, (v, i) => i + 1);
+Array.from({ length: n + 1 }, (_, i) => i + 1);
 [...Array(n + 1).keys()];
+
+// * Array.from
+// 1. 첫 번째 인자가 배열인 경우
+const arr = Array.from([10, 20, 30], (value, index) => value * 2); // [20, 40, 60]
+
+// 2. 첫 번째 인자가 유사 배열 객체인 경우
+Array.from({ 0: 'a', 1: 'b', length: 2 }, (value, index) => value || index); // ['a', 'b']
+
+// 3. 첫 번째 인자가 문자열인 경우
+Array.from('hello', (value) => value.toUpperCase()); // ['H', 'E', 'L', 'L', 'O']
+
+// 4. 첫 번째 인자가 Map 또는 Set인 경우
+const set = new Set([1, 2, 3]);
+Array.from(set, (value) => value * 2); // [2, 4, 6]
+
+// ! 배열의 접근
+// * arr.at(인덱스) : 음수 인덱스도 가능
+// stack[stack.length -1]
+// stack.at(-1)
 
 // ! 배열 합치기
 // arr1 = arr1.concat(arr2)
@@ -79,23 +98,38 @@ Array.from({ length: n + 1 }, (v, i) => i + 1);
 // continue - 중간에 해당 요소만 건너뛰고 반복문 진행
 // https://mainia.tistory.com/934
 
+// 배열 메서드에서는 중단은 불가
+// skip을 위해 return 사용
+
 // ! 배열 평탄화
 // arr.flat([depth]). [depth]는 옵션(기본값은 1)
 
 // ! 요소 찾기
 // includes - 배열이 특정요소를 포함하고 있는지 확인, boolean을 반환
-const fruits = ['apple', 'banana', 'mango', 'orange'];
-const includesBanana = fruits.includes('banana');
-console.log(includesBanana); // true
+['apple', 'banana', 'mango', 'orange'].includes('banana'); // true
 
 // some - 배열의 하나 이상의 요소가 주어진 함수에 의해 구현된 테스트를 통과하는지 확인, boolean을 반환
-const numbers = [1, 3, 5, 7, 9];
-const hasOddNumber = numbers.some((number) => number % 2 !== 0);
-console.log(hasOddNumber); // true
+[1, 3, 5, 7, 9].some((number) => number % 2 !== 0); // true
 
-// some - 배열의 모든 요소가 주어진 함수에 의해 구현된 테스트를 통과하는지 확인, boolean을 반환
-const ages = [18, 20, 22, 25, 30];
-const allAdults = ages.every((age) => age >= 18);
-console.log(allAdults); // true
+// every - 배열의 모든 요소가 주어진 함수에 의해 구현된 테스트를 통과하는지 확인, boolean을 반환
+[18, 20, 22, 25, 30].every((age) => age >= 18); // true
 
-// find - 주어진 테스트 함수를 만족하는 배열의 첫번째 요소를 반환, 만족하는 요소가 없으면 undefined를 반환
+// find - 주어진 테스트 함수를 만족하는 배열의 첫 번째 요소를 반환, 만족하는 요소가 없으면 undefined를 반환
+[10, 15, 20, 25].find((number) => number % 2 === 0); // 10
+
+// findIndex - 주어진 테스트 함수를 만족하는 배열의 첫 번째 요소의 인덱스를 반환, 만족하는 요소가 없으면 -1을 반환
+[10, 15, 20, 25].findIndex((number) => number % 2 === 0); // 0
+
+// filter - 주어진 함수의 조건을 만족하는 모든 요소를 배열로 반환
+const oddNumbers = numbers.filter((number) => number % 2 !== 0); // [15, 25]
+
+// indexOf - 배열에서 특정 요소의 첫 번째 인덱스를 반환, 요소가 없으면 -1을 반환
+['apple', 'banana', 'mango'].indexOf('banana'); // 1
+
+// lastIndexOf - 배열에서 특정 요소의 마지막 인덱스를 반환, 요소가 없으면 -1을 반환
+['apple', 'banana', 'apple', 'mango'].lastIndexOf('apple'); // 2
+
+// at - 배열의 양수 또는 음수 인덱스에 위치한 요소를 반환
+const fruits = ['apple', 'banana', 'mango'];
+fruits.at(1); // 'banana'
+fruits.at(-1); // 'mango'
