@@ -4,7 +4,7 @@ function solution(w, h) {
   const total = w * h;
   const gcd = getGcd(w, h);
   const waste = w + h - gcd;
-  return w * h - waste;
+  return total - waste;
 }
 
 function getGcd(m, n) {

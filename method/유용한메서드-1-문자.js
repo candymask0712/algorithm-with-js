@@ -61,7 +61,7 @@ console.info('ABCDE'.slice(1)); // 'BCDE'
 
 // ! 이진법 다루기 (toString)
 // | : single vertical bar (이진수로 변환 후 각 자리 버림합한 결과 리턴)
-// str.tostring(n) : 숫자를 문자화 (n은 옵션 - n진법으로 변환)
+// str.toString(n) : 숫자를 문자화 (n은 옵션 - n진법으로 변환)
 
 // ! 문자열 반복 (repeat)
 //  let A = "수박".repeat(3); // "수박수박수박"
