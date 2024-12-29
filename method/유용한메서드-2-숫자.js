@@ -34,26 +34,3 @@
 // Math.pow(대상숫자, 제곱수)
 // 대상숫자**제곱수
 // 위 두 방법은 동일하나 **는 BigInt를 추가로 다룰 수 있음
-
-
-
-function solution(A) {
-    A.sort((a,b)=> a-b)
-    let answer = 1
-    for(let i =0; i<A.length; i++) {
-    if(A[i] === answer) {
-    answer++
-    }
-    }
-    return answer
-    }
-  
-    function solution(A) {
-      for(let i=0; i<A.length; i++){
-          const current = A[i]
-          if(A.indexOf(current) === A.lastIndexOf(current)){
-              return current
-          }
-      }
-      return -1
-  }
