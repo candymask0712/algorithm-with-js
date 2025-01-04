@@ -1,3 +1,4 @@
+// ! 상수로 선언
 const openBracket = ['(', '{', '['];
 const pairBracket = {
   ')': '(',
