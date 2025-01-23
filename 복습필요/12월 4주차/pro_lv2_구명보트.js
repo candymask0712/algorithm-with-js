@@ -1,3 +1,4 @@
+// *
 function solution(people, limit) {
   var answer = 0;
 
@@ -15,6 +16,28 @@ function solution(people, limit) {
     } else {
       lp++;
     }
+    answer++;
+  }
+
+  return answer;
+}
+
+// * 2차 풀이
+function solution(people, limit) {
+  var answer = 0;
+
+  people.sort((a, b) => b - a);
+  const n = people.length;
+  let lp = 0;
+  let rp = n - 1;
+
+  // ! 이번에드 = 를 붙이는 판단이 늦어서 풀이 지연
+  while (lp <= rp) {
+    // * 이전에 비해 조건 간소화
+    if (people[lp] + people[rp] <= limit) {
+      rp--;
+    }
+    lp++;
     answer++;
   }
 
