@@ -24,6 +24,7 @@ function solution(k, tangerine) {
 }
 
 // * 두번째 풀이
+// * 첫번째 풀이보다 퇴보
 function solution(k, tangerine) {
   var answer = 0;
 
@@ -53,6 +54,7 @@ function solution(k, tangerine) {
 
   list.sort((a, b) => b - a);
 
+  // ! 음수가 되었을 때 break 를 해서 리턴부를 하나로 통일하는 것도 좋아보임
   for (const num of list) {
     if (k <= 0) return answer;
     k -= num;
