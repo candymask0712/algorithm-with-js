@@ -17,7 +17,7 @@ let answer = 0;
 while (lp <= rp) {
   const mid = Math.floor((lp + rp) / 2);
   const totalLength = getTotalLength(mid, trees);
-  // console.info('*', mid, totalLength);
+
   if (totalLength >= M) {
     answer = Math.max(answer, mid);
     lp = mid + 1;
