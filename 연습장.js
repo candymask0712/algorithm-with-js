@@ -1,38 +1,45 @@
-const solution = (s, t) => {
-  let answer = 0;
-  let window = s.slice(0, 3);
+const input = require('fs')
+  .readFileSync(process.platform === 'linux' ? '/dev/stdin' : './input.txt')
+  .toString()
+  .trim()
+  .split('\n');
 
-  const n = s.length;
+const [N, M] = input[0].split(' ').map(Number);
+const costs = input.slice(1).map(Number);
 
-  for (let i = 3; i <= n; i++) {
-    console.info(i, s[i], window, t, isAna(window, t));
-    if (isAna(window, t)) answer++;
-    window = window.slice(1) + s[i];
+function solution(N, M, costs) {
+  const total = costs.reduce((acc, cur) => acc + cur, 0);
+  let answer = total;
+  const min = costs.slice().sort((a, b) => a - b)[costs.length - 1];
+
+  const days = N - M;
+
+  let lp = min;
+  let rp = total;
+
+  while (lp <= rp) {
+    const mid = parseInt((lp + rp) / 2);
+    let count = 1; // 출금 횟수
+    let currentMoney = mid;
+
+    for (let cost of costs) {
+      if (currentMoney < cost) {
+        count++; // 출금 횟수 증가
+        currentMoney = mid;
+      }
+      currentMoney -= cost;
+    }
+
+    if (count > M) {
+      rp = mid;
+    } else if {
+      lp = mid;
+    }
+     else {
+    }
   }
+
   return answer;
-};
-
-function isAna(str1, str2) {
-  if (str1.length !== str2.length) return false;
-  const h = new Map();
-  for (const char of str1) {
-    if (h.has(char)) h.set(char, h.get(char) + 1);
-    else h.set(char, 1);
-  }
-
-  for (const char of str2) {
-    if (!h.has(char)) return false;
-    else h.set(char, h.get(char) - 1);
-  }
-
-  for (const [key, val] of h) {
-    if (val !== 0) return false;
-  }
-
-  return true;
 }
 
-const str6 = 'bacaAacba';
-const target = 'abc';
-
-console.info(solution(str6, target));
+console.info(solution(N, M, costs));
