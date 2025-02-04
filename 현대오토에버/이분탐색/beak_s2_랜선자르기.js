@@ -12,6 +12,7 @@ const lineList = input
 
 let answer = 0;
 let lp = 1;
+// ! 갯수의 극대화라고 생각해 가장 짧은 랜선으로 설정하는 실수
 let rp = lineList[lineList.length - 1];
 
 while (lp <= rp) {
@@ -19,8 +20,10 @@ while (lp <= rp) {
 
   if (isPossible(mid, lineList, N)) {
     answer = mid;
+    // ! lp를 그냥 mid로 할당 -> 무한 반복
     lp = mid + 1;
   } else {
+    // ! rp를 그냥 mid로 할당 -> 무한 반복
     rp = mid - 1;
   }
 }
@@ -31,6 +34,5 @@ function isPossible(len, lineList, N) {
   lineList.forEach((line) => {
     count += Math.floor(line / len);
   });
-  // console.log(count, N);
   return count >= N;
 }
