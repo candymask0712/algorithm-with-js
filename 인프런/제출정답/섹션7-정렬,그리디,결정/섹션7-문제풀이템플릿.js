@@ -19,6 +19,10 @@ console.log(solution(arr));
 // * 7-4
 
 // * 7-5
+const solution = (size, arr) => {};
+let size = 5;
+let arr = [1, 2, 3, 2, 6, 2, 3, 5, 7];
+console.info(solution(size, arr)); // [7, 5, 3, 2, 6]
 
 // * 7-6
 const solution = (arr) => {};
@@ -35,9 +39,16 @@ let arr = [
   [1, 3],
   [1, 2],
   [2, 5],
-  [3, 6]
+  [3, 6],
 ];
 console.log(solution(arr));
+// [
+//   [1, 2],
+//   [1, 3],
+//   [2, 5],
+//   [2, 7],
+//   [3, 6],
+// ];
 
 // * 7-8
 const solution = (arr) => {};
@@ -46,14 +57,14 @@ let arr = [
   [2, 3],
   [3, 5],
   [4, 6],
-  [5, 7]
+  [5, 7],
 ];
 console.log(solution(arr));
 
 let arr2 = [
   [3, 3],
   [1, 3],
-  [2, 3]
+  [2, 3],
 ];
 console.log(solution(arr2));
 
@@ -65,7 +76,7 @@ let arr = [
   [12, 15],
   [15, 20],
   [20, 30],
-  [5, 14]
+  [5, 14],
 ];
 console.log(solution(arr));
 

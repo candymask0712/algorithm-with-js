@@ -40,55 +40,43 @@ console.log(solution(a, b));
 // * 모범 답안 2 (시간 복잡도 o(n))
 function solution(s, t) {
   let answer = 0;
-  let sH = new Map();
-  for (let x of t) {
-    sH.set(x, (sH.get(x) || 0) - 1);
+  const targetMap = new Map();
+
+  // t 문자열의 문자 빈도를 음수로 초기화
+  for (const char of t) {
+    targetMap.set(char, (targetMap.get(char) || 0) - 1);
   }
-  let len = t.length - 1;
-  for (let i = 0; i < len; i++) {
-    sH.set(s[i], (sH.get(s[i]) || 0) + 1);
-    if (sH.get(s[i]) === 0) sH.delete(s[i]);
+
+  const windowSize = t.length;
+  const sLength = s.length;
+
+  // 초기 윈도우 세팅 (마지막 한 문자 전까지)
+  for (let i = 0; i < windowSize - 1; i++) {
+    const char = s[i];
+    targetMap.set(char, (targetMap.get(char) || 0) + 1);
+    if (targetMap.get(char) === 0) targetMap.delete(char);
   }
-  let lt = 0;
-  for (let rt = len; rt < s.length; rt++) {
-    sH.set(s[rt], (sH.get(s[rt]) || 0) + 1);
-    if (sH.get(s[rt]) === 0) sH.delete(s[rt]);
-    if (sH.size === 0) answer++;
-    sH.set(s[lt], (sH.get(s[lt]) || 0) - 1);
-    if (sH.get(s[lt]) === 0) sH.delete(s[lt]);
-    lt++;
+
+  let left = 0;
+  for (let right = windowSize - 1; right < sLength; right++) {
+    // 오른쪽 문자 추가
+    const addChar = s[right];
+    targetMap.set(addChar, (targetMap.get(addChar) || 0) + 1);
+    if (targetMap.get(addChar) === 0) targetMap.delete(addChar);
+
+    // 아나그램 조건 확인
+    if (targetMap.size === 0) answer++;
+
+    // 왼쪽 문자 제거
+    const removeChar = s[left];
+    targetMap.set(removeChar, (targetMap.get(removeChar) || 0) - 1);
+    if (targetMap.get(removeChar) === 0) targetMap.delete(removeChar);
+    left++;
   }
+
   return answer;
 }
 console.log(solution('bacacbcba', 'abc'));
-
-// * 모범 답안 분석 (모범답안 2만 분석)
-function solution(s, t) {
-  let answer = 0;
-  let sH = new Map();
-  for (let x of t) {
-    sH.set(x, (sH.get(x) || 0) - 1);
-  }
-  let len = t.length - 1;
-  for (let i = 0; i < len; i++) {
-    sH.set(s[i], (sH.get(s[i]) || 0) + 1);
-    if (sH.get(s[i]) === 0) sH.delete(s[i]);
-  }
-  let lt = 0;
-  for (let rt = len; rt < s.length; rt++) {
-    sH.set(s[rt], (sH.get(s[rt]) || 0) + 1);
-    if (sH.get(s[rt]) === 0) sH.delete(s[rt]);
-
-    if (sH.size === 0) answer++;
-
-    sH.set(s[lt], (sH.get(s[lt]) || 0) - 1);
-    if (sH.get(s[lt]) === 0) sH.delete(s[lt]);
-    lt++;
-  }
-  return answer;
-}
-console.log(solution('bacacbcba', 'abc'));
-// * 3차 답안
 
 // * 2차 답안 - 성공 (but 이중포문이라 시간복잡도 o(n*m)
 
