@@ -17,6 +17,21 @@ function solution(s) {
   return answer;
 }
 
+//  5차 - answer 라는 별도의 상태를 만들어 사용
+const solution = (str) => {
+  const stack = [];
+  let answer = '';
+  for (const char of str) {
+    if (char === '(') {
+      stack.push('(');
+    } else if (char === ')') {
+      if (stack.length) stack.pop();
+    } else {
+      if (!stack.length) answer += char;
+    }
+  }
+  return answer;
+};
 // 4차
 
 const solution = (str) => {
