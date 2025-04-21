@@ -1,4 +1,4 @@
-const arr = ['A', 'B', 'C'];
+const arr = ['A', 'B', 'C', 'D'];
 const selectNum = 2;
 
 console.log('🔹 순열(Permutation) - 순서 O, 중복 X');
