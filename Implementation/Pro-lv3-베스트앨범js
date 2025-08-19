@@ -1,0 +1,50 @@
+// * 문제..
+// *
+
+//
+
+// * 모범 답안
+
+// * 3차 풀이
+
+// * 2차 풀이
+
+// * 1차 풀이
+const BEST_SONG_CRITERIA = 2;
+
+function solution(genres, plays) {
+  const answer = [];
+  const genrePlayInfo = new Map();
+  const n = genres.length;
+
+  for (let i = 0; i < n; i++) {
+    const genre = genres[i];
+    const play = plays[i];
+
+    if (!genrePlayInfo.has(genre)) {
+      genrePlayInfo.set(genre, {
+        totalPlay: play,
+        songs: [{ name: i, play }],
+      });
+    } else {
+      const info = genrePlayInfo.get(genre);
+      info.totalPlay += play;
+      const newList = [...info.songs, { name: i, play }];
+      newList.sort((a, b) => b.play - a.play);
+      info.songs = newList.slice(0, BEST_SONG_CRITERIA);
+    }
+  }
+
+  const genrePlayList = Array.from(genrePlayInfo);
+  genrePlayList.sort((a, b) => b[1].totalPlay - a[1].totalPlay);
+
+  for (const genrePlay of genrePlayList) {
+    const [genre, info] = genrePlay;
+    const { songs } = info;
+    for (const song of songs) {
+      answer.push(song.name);
+    }
+  }
+
+  return answer;
+}

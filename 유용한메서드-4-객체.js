@@ -25,6 +25,9 @@
 //  해시.keys(): 해시맵의 모든 key들을 반환
 //  해시.clear() : 해시맵 모든 내용 삭제
 //  해시.delete(key) : 삭제
-//  for (let [key, val] of sH) {}
+//  for (let [key, val] of 해시) {}
+//  [...해시] => 해시맵을 배열로 변환
+//  [...해시.keys()] => 해시맵의 key들을 배열로 변환
+//  [...해시.values()] => 해시맵의 value들을 배열로 변환
 
 let graph = Array.from(Array(n + 1), () => Array(n + 1).fill(0));
