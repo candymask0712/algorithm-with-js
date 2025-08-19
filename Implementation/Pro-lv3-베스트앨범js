@@ -3,8 +3,40 @@
 
 //
 
-// * 모범 답안
+// * 모범 답안 - GPT
+const BEST_SONG_CRITERIA2 = 2;
 
+function solution(genres, plays) {
+  const genrePlayInfo = new Map();
+
+  // 1) 장르별 총합/곡목록 누적 (한 번만 순회)
+  for (let i = 0; i < genres.length; i++) {
+    const genre = genres[i];
+    const play = plays[i];
+
+    const info = genrePlayInfo.get(genre) || { totalPlay: 0, songs: [] }; // ! 해시맵에 값이 없는 것을 대비한 좋은 처리
+    info.totalPlay += play;
+    info.songs.push({ idx: i, play });
+    genrePlayInfo.set(genre, info);
+  }
+
+  // 2) 장르를 총 재생수 내림차순으로 정렬
+  const sortedGenres = [...genrePlayInfo.entries()].sort(
+    (a, b) => b[1].totalPlay - a[1].totalPlay
+  );
+
+  // 3) 각 장르의 곡을 (재생수 내림차순, 인덱스 오름차순)으로 정렬 후 상위 2개 선택
+  const answer = [];
+  for (const [, { songs }] of sortedGenres) {
+    // ! [, { songs }] 한번에 단축하는 테크닉도 좋았음
+    songs
+      .sort((a, b) => b.play - a.play || a.idx - b.idx) // ! 이중 정렬을 한 줄로 깔끔하게 작성
+      .slice(0, BEST_SONG_CRITERIA2)
+      .forEach((s) => answer.push(s.idx)); // ! 체이닝으로 forEach 사용도 좋음
+  }
+
+  return answer;
+}
 // * 3차 풀이
 
 // * 2차 풀이
