@@ -1,4 +1,31 @@
-// 나의 풀이 - 1
+// * 나의 풀이 - 3 (25.08.23) - 정답
+var isSubsequence = function (s, t) {
+  let i = 0; // ! 포인터로 불필요한 배열사용 개선
+  for (const char of t) {
+    if (char === s[i]) {
+      i++;
+      if (i === s.length) return true; // ! 조기 종료
+    }
+  }
+  // ! 원래는 조기 종료 조건이 있어 return false로 생각
+  // ! 그러나 조기 종료 조건은 s='' 경우 if 문 안으로 들어가지 않음
+  // ! 또한 t가 빈 문자열인 경우 무조건 false 반환
+  return s.length === i;
+};
+
+// * 나의 풀이 - 2 (25.08.23) - 정답
+var isSubsequence = function (s, t) {
+  const arr = s.split('');
+  for (const char of t) {
+    if (char === arr[0]) {
+      arr.shift();
+    }
+  }
+
+  return arr.length === 0;
+};
+
+// * 나의 풀이 - 1
 var isSubsequence = function (s, t) {
   if (s.length === 0) return true;
   if (t.length === 0) return false;

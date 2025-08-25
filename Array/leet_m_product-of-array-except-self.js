@@ -1,3 +1,10 @@
+// * 문제
+// *
+
+//
+//
+
+// * 모범 답안
 /**
  * @param {number[]} nums
  * @return {number[]}
@@ -24,3 +31,9 @@ var productExceptSelf = function (nums) {
 
   return answer;
 };
+
+// * 3차 풀이
+
+// * 2차 풀이
+
+// * 1차 풀이 - (25.08.24) - 틀림

@@ -23,7 +23,18 @@ function mergeAlternately(word1, word2) {
 
 // * 3차 풀이
 
-// * 2차 풀이
+// * 2차 풀이 -  (25.08.24)
+
+var mergeAlternately = function (word1, word2) {
+  let p1 = 0;
+  let p2 = 0;
+  let answer = '';
+  while (p1 < word1.length || p2 < word2.length) {
+    if (p1 < word1.length) answer += word1[p1++];
+    if (p2 < word2.length) answer += word2[p2++];
+  }
+  return answer;
+};
 
 // * 1차 풀이 -  정답
 /**
