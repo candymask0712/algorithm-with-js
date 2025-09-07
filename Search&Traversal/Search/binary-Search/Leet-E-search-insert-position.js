@@ -5,15 +5,9 @@
 //
 
 // * 모범 답안
-
-// * 3차 풀이
-
-// * 2차 풀이 - (25.09.07) - 정답
-
 var searchInsert = function (nums, target) {
-  const n = nums.length;
   let lp = 0;
-  let rp = n - 1;
+  let rp = nums.length - 1;
 
   while (lp <= rp) {
     const mid = Math.floor((lp + rp) / 2);
@@ -29,6 +23,26 @@ var searchInsert = function (nums, target) {
 
   return lp;
 };
+// * 3차 풀이
 
-// * 1차 풀이 - 실패
-// ! 딱 맞는 숫자가 업는 것을 복잡한 조건으로 풀이하려고 함
+// * 2차 풀이
+
+// * 1차 풀이 - 틀림=-
+
+var searchInsert = function (nums, target) {
+  const n = nums.length;
+  let lp = 0;
+  let rp = n - 1;
+
+  if (target <= nums[lp]) return 0;
+  if (target >= nums[rp]) return n;
+
+  while (lp <= rp) {
+    const mid = Math.floor((lp + rp) / 2);
+    const prev = nums[mid - 1]; // ! target이 중간에 위치하면 앞뒤로 조회해야는 로직이 애매함
+    const next = nums[mid + 1];
+
+    if (mid >= prev && mid <= next) {
+    }
+  }
+};
