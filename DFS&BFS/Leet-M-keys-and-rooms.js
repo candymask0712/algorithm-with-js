@@ -5,6 +5,11 @@
 //
 
 // * 모범 답안
+// ? 시간복잡도: O(n + e)
+// (n = 방 수, e = 키의 총 개수)
+// ? 공간복잡도: O(n)
+
+// ! rooms = 그래프의 인접 리스트 (adjacency list)
 var canVisitAllRooms = function (rooms) {
   const n = rooms.length;
   const visited = Array(n).fill(false);
@@ -31,6 +36,17 @@ var canVisitAllRooms = function (rooms) {
 // * 2차 풀이
 
 // * 1차 풀이 - (25.09.15) - 정답
+// 	dfs는 모든 방과 키(간선)를 순회 → 기본적으로 O(n + e)
+// (n = 방 수, e = 키의 총 개수)
+// 	하지만 매번 ch.every(...)가 O(n) 이라서, 최악의 경우 O(n) * O(n+e) = O(n² + n·e)
+// •	정점 처리 비용: 방은 총 n개, 각 방은 DFS에서 최대 한 번 방문 → O(n)
+// •	간선 처리 비용: 각 키(간선)는 한 번씩만 확인 → O(e)
+// •	따라서 총 비용 = O(n + e)
+
+// 	즉, 최악에는 O(n²) 로 느려질 수 있음.
+// ? 시간복잡도: O(n²)
+// ? 공간복잡도: O(n)
+
 var canVisitAllRooms = function (rooms) {
   let answer = false;
   let ch = Array(rooms.length).fill(0);
