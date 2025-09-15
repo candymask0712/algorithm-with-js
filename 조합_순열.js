@@ -47,6 +47,9 @@ function getRepeatedPermutations(arr, selectNum) {
   return result;
 }
 
+let dx = [0, 0, 1, -1];
+let dy = [-1, 1, 0, 0];
+
 // ✅ 조합(Combination) - 순서 X, 중복 X
 function getCombinations(arr, selectNum) {
   if (selectNum === 1) return arr.map((el) => [el]);
@@ -83,5 +86,4 @@ function getRepeatedCombinations(arr, selectNum) {
   });
 
   return result;
-  s;
 }
