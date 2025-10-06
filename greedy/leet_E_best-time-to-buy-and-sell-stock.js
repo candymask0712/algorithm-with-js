@@ -1,3 +1,16 @@
+// * 2차 풀이 - (25.10.03) - 정답
+var maxProfit = function (prices) {
+  let lowest = Infinity;
+  let answer = 0;
+  const n = prices.length;
+  for (const price of prices) {
+    const diff = price - lowest;
+    if (diff > answer) answer = diff;
+    if (price < lowest) lowest = price;
+  }
+  return answer;
+};
+
 // * 나의 풀이
 
 var maxProfit = function (prices) {

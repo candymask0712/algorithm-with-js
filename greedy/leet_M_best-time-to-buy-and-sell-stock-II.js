@@ -1,3 +1,22 @@
+// * 나의 풀이 - 2 - (25.10.03) - 정답
+// ! 비효율적
+var maxProfit = function (prices) {
+  let prevLow = prices[0];
+  let answer = 0;
+
+  for (const price of prices) {
+    const diff = price - prevLow;
+    if (diff > 0) {
+      answer += diff;
+      prevLow = price;
+    }
+    if (price < prevLow) {
+      prevLow = price;
+    }
+  }
+  return answer;
+};
+
 // * 나의 풀이
 // ! 여러 시도를 하다 실패
 var maxProfit = function (prices) {
@@ -20,6 +39,8 @@ var maxProfit = function (prices) {
 
 // * 참고 답안
 // ! 바로바로 이득이면 무조건 판매하는 것으로 계산
+// ?	시간복잡도: O(n)
+// ? 	공간복잡도: O(1)
 function maxProfit(prices) {
   let maxProfit = 0;
 
