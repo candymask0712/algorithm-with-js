@@ -1,3 +1,40 @@
+// * 문제
+// *
+
+//
+//
+
+// * 모범 답안
+
+// * 3차 풀이
+
+// * 2차 풀이 - (25.10.03) - 정답
+
+// * 1차 풀이 - (25.10.03) - 성공
+// ?	시간복잡도: O(2^n)
+// ? 	공간복잡도: O(n)
+var jump = function (nums) {
+  const n = nums.length;
+  const isVisited = Array(n).fill(false);
+
+  const q = [];
+  q.push([0, 0]);
+  isVisited[0] = true;
+  while (q.length) {
+    const [curIndex, jumpCount] = q.shift();
+    if (curIndex === n - 1) {
+      return jumpCount;
+    }
+    const maxDistance = nums[curIndex];
+    for (let i = 1; i <= maxDistance; i++) {
+      const nextIndex = curIndex + i;
+      if (isVisited[nextIndex]) continue;
+      isVisited[nextIndex] = true;
+      q.push([nextIndex, jumpCount + 1]);
+    }
+  }
+};
+
 // * 나의 풀이
 // ! dp방식 사용 시 시간복잡도가 하위권
 var jump = function (nums) {
