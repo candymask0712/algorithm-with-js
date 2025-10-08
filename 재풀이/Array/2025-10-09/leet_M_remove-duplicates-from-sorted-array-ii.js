@@ -6,7 +6,7 @@
 
 // * 모범 답안
 
-// * 3차 풀이
+// * 3차 풀이 - (25.10.09) - 틀림
 
 // * 2차 풀이
 var removeDuplicates = function (nums) {
