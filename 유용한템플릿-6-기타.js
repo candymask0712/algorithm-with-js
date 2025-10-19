@@ -30,9 +30,15 @@ function isPrime(num) {
 }
 
 // ! 최대 공약수-GCD (유클리드 호제법: Euclidean algorithm)
+// a와 b의 최대공약수는, b와 (a를 b로 나눈 나머지)의 최대공약수와 같다.
 function gcd(m, n) {
   if (m % n === 0) return n;
   return gcd(n, m % n);
+}
+
+// ! 최소 공배수-LCM (유클리드 호제법: Euclidean algorithm)
+function lcm(a, b) {
+  return (a * b) / gcd(a, b);
 }
 
 // ! 특정요소가 n개 이상인 숫자/문자열 거르기
