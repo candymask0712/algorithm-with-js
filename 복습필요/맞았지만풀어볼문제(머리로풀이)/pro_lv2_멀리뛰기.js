@@ -30,6 +30,24 @@ function solution(n) {
   return prev1;
 }
 
+// * 4차 풀이 - (25.10.25) - 공간복잡도 최소 답보고 풀이
+const MOD = 1234567;
+
+function solution(n) {
+  if (n === 1) return 1;
+  let prev2 = 1;
+  let prev1 = 2;
+
+  let answer = 0;
+  for (let i = 3; i <= n; i++) {
+    answer = (prev2 + prev1) % MOD;
+    prev2 = prev1;
+    prev1 = answer;
+  }
+
+  return prev1;
+}
+
 // * 3차 풀이
 // ? 시간복잡도: O(n)
 // ? 공간복잡도: O(n)

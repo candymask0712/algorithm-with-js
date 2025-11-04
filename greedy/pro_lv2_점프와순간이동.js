@@ -6,7 +6,21 @@
 function solution(n) {
   return n.toString(2).split('1').length - 1;
 }
-// * 3차 풀이
+// * 3차 풀이 - (25.10.25) - 성공
+// ? 시간복잡도: O(logn)
+// ? 공간복잡도: O(1)
+function solution(n) {
+  let answer = 0;
+  while (n > 0) {
+    if (n % 2 === 0) {
+      n = n / 2;
+    } else {
+      n = (n - 1) / 2;
+      answer++;
+    }
+  }
+  return answer;
+}
 
 // * 2차 풀이 - (25.10.18) - 답보고 성공
 // ? 시간복잡도: O(log n)

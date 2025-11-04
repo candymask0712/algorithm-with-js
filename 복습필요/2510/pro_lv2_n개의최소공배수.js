@@ -11,7 +11,21 @@ function gcd(m, n) {
   if (m % n === 0) return n;
   return gcd(n, m % n);
 }
-// * 3차 풀이
+// * 3차 풀이 - (25.10.25) - 답보고 성공
+function solution(arr) {
+  var answer = 1;
+
+  for (const num of arr) {
+    answer = (answer * num) / gcd(num, answer);
+  }
+
+  return answer;
+}
+
+function gcd(a, b) {
+  if (a % b === 0) return b;
+  return gcd(b, a % b);
+}
 
 // * 2차 풀이 - (25.10.18) - 답보고 성공
 // •	n = 배열 길이 (최대 15)

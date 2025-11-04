@@ -21,6 +21,16 @@ function solution(s) {
 // * 3차 풀이
 
 // * 2차 풀이
+// ! '    '.split(' ') => ['', '', '', '', ''] (공백 n개 => n+1개의 빈 문자열)
+function solution(s) {
+  return s
+    .split(' ')
+    .map((word) => {
+      if (word === '') return '';
+      return word[0].toUpperCase() + word.slice(1).toLowerCase();
+    })
+    .join(' ');
+}
 
 // * 1차 풀이
 // ! 여러개의 공백을 제거했지만 공백은 유지되어야 함
