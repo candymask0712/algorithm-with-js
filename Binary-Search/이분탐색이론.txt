@@ -1,0 +1,25 @@
+🧭 기본 개념
+
+1. while (lp <= rp)
+양쪽이 겹치기 전까지 탐색
+“정확히 어떤 값(target)”을 찾는 클래식 이진 탐색
+
+mid 처리 방식
+mid 비교 후 lp = mid + 1 / rp = mid - 1
+
+종료 후 의미
+못 찾으면 lp 가 삽입 위치
+
+
+
+2. while (lp < rp)
+양쪽이 겹치는 순간 멈춤
+“조건을 만족하는 구간의 경계(boundary)”를 찾는 Lower/Upper Bound 탐색
+경계(최솟값, 피크, 전환점 등) 찾기 유형
+
+
+mid 처리 방식
+mid 비교 후 lp = mid + 1 또는 rp = mid
+
+종료 후 의미
+lp (또는 rp) 가 답
