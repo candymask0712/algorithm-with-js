@@ -23,7 +23,25 @@ var searchInsert = function (nums, target) {
 
   return lp;
 };
-// * 3차 풀이
+// * 3차 풀이 - (25.11.07) - 성공
+var searchInsert = function (nums, target) {
+  const n = nums.length;
+  let lp = 0;
+  let rp = n - 1;
+
+  while (lp <= rp) {
+    const mid = Math.floor((rp + lp) / 2);
+    const midNum = nums[mid];
+    if (midNum === target) return mid;
+
+    if (midNum > target) {
+      rp = mid - 1;
+    } else {
+      lp = mid + 1;
+    }
+  }
+  return lp;
+};
 
 // * 2차 풀이 - 성공
 var searchInsert = function (nums, target) {

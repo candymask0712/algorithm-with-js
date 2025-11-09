@@ -1,3 +1,19 @@
+// * 3차 풀이 (25.11.08) - 성공
+// ? 시간복잡도: O(n)
+// ? 공간복잡도: O(1)
+var maxProfit = function (prices) {
+  let minPrice = prices[0];
+  let maxDiff = 0;
+
+  for (const price of prices) {
+    const diff = price - minPrice;
+    if (diff > maxDiff) maxDiff = diff;
+    if (price < minPrice) minPrice = price;
+  }
+
+  return maxDiff;
+};
+
 // * 2차 풀이 - (25.10.03) - 정답
 var maxProfit = function (prices) {
   let lowest = Infinity;
@@ -11,7 +27,7 @@ var maxProfit = function (prices) {
   return answer;
 };
 
-// * 나의 풀이
+// * 1차 풀이
 
 var maxProfit = function (prices) {
   let min = prices[0];

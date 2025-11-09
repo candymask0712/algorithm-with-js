@@ -1,3 +1,16 @@
+// * 3차 풀이 (25.11.08) - 성공
+var climbStairs = function (n) {
+  const dp = Array(n + 1).fill(0);
+
+  dp[1] = 1;
+  dp[2] = 2;
+
+  for (let i = 3; i <= n; i++) {
+    dp[i] = dp[i - 1] + dp[i - 2];
+  }
+
+  return dp[n];
+};
 // * 2차 풀이 (25.10.10) - 성공
 // ? 시간복잡도: O(n)
 // ? 공간복잡도: O(n)
