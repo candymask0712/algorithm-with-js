@@ -1,4 +1,5 @@
 // * 5-1
+// https://leetcode.com/problems/merge-sorted-array/
 const solution = (arr1, arr2) => {};
 
 let arr1 = [1, 3, 5];
@@ -7,6 +8,7 @@ let arr2 = [2, 3, 6, 7, 9];
 console.log(solution(arr1, arr2)); // [1, 2, 3, 3, 5, 6, 7, 9]
 
 // * 5-2
+// https://leetcode.com/problems/intersection-of-two-arrays/
 const solution = (arr1, arr2) => {};
 
 let arr1 = [1, 3, 9, 5, 2];

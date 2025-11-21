@@ -37,7 +37,31 @@ function solution(arr1, arr2) {
   return answer;
 }
 
-// 5차 - 성공
+// * 6차 - 실패
+const solution = (arr1, arr2) => {
+  let p1 = 0;
+  let p2 = 0;
+  let answer = [];
+
+  // ! 둘다 유효한 범위여야 하므로 && 조건이 맞음
+  while (p1 < arr1.length || p2 < arr.length) {
+    const num1 = arr1[p1];
+    const num2 = arr2[p2];
+    if (num1 >= num2) {
+      answer.push(num1);
+      p1++;
+    } else {
+      answer.push(num2);
+      p2++;
+    }
+  }
+  while (p1 < arr1.length) answer.push(++p1);
+  while (p2 < arr2.length) answer.push(++p2);
+
+  return answer;
+};
+
+// * 5차 - 성공
 const solution = (arr1, arr2) => {
   const newArr = arr1.concat(...arr2).sort();
   console.info(newArr);
