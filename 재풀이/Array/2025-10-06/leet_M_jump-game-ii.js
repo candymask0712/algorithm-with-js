@@ -33,6 +33,29 @@ var jump = function (nums) {
   return jumps;
 };
 
+// * 5차 풀이 - (25.11.21) - 성공
+var jump = function (nums) {
+  const n = nums.length;
+  let curEnd = -1;
+  let possibleEnd = 0;
+  let answer = 0;
+
+  for (let i = 0; i < n - 1; i++) {
+    possibleEnd = Math.max(possibleEnd, i + nums[i]);
+
+    // ! 처음에 모자른 경우에만 갱신하도록 = 를 안써서 틀림
+    if (curEnd <= i) {
+      if (possibleEnd > curEnd) {
+        curEnd = possibleEnd;
+        answer++;
+      }
+      if (curEnd >= n - 1) return answer;
+    }
+  }
+
+  return answer;
+};
+
 // * 4차 풀이 - (25.11.19) - 실패
 /**
  * @param {number[]} nums
