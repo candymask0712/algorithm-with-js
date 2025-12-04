@@ -33,6 +33,27 @@ var jump = function (nums) {
   return jumps;
 };
 
+// * 6차 풀이 - (25.12.04) - 성공
+// ?	시간복잡도: O(n)
+// ? 	공간복잡도: O(1)
+
+var jump = function (nums) {
+  let answer = 0;
+  let maxIndex = 0;
+  let possibleMax = 0;
+
+  for (let i = 0; i < nums.length; i++) {
+    if (maxIndex < i) {
+      answer++;
+      maxIndex = possibleMax;
+      // ! 이미 끝까지 도달 가능하면 종료하는 로직있으면 최적화
+    }
+    possibleMax = Math.max(possibleMax, i + nums[i]);
+  }
+
+  return answer;
+};
+
 // * 5차 풀이 - (25.11.21) - 성공
 var jump = function (nums) {
   const n = nums.length;

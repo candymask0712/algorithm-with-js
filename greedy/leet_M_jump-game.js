@@ -20,6 +20,25 @@ var canJump = function (nums) {
   return true;
 };
 
+// * 5차 풀이 - (25.12.04) - 성공
+// ?	시간복잡도: O(n)
+// ? 	공간복잡도: O(1)
+var canJump = function (nums) {
+  let maxIndex = 0;
+  const n = nums.length;
+
+  // ! 없어도 되는 조건
+  if (nums.length === 1) return true;
+
+  for (let i = 0; i < n; i++) {
+    if (maxIndex < i) return false;
+    let limitJump = i + nums[i];
+    if (limitJump > maxIndex) maxIndex = limitJump;
+    if (maxIndex >= nums.length - 1) return true;
+  }
+  return false;
+};
+
 // * 4차 풀이 - (25.11.10) - 성공
 var canJump = function (nums) {
   const n = nums.length;
