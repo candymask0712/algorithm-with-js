@@ -33,7 +33,24 @@ var numSubarrayProductLessThanK = function (nums, k) {
 
 // * 3차 풀이
 
-// * 2차 풀이
+// * 2차 풀이 - (25.11.21) - 실패
+var numSubarrayProductLessThanK = function (nums, k) {
+  let lp = 0;
+  let total = 1;
+  let answer = 0;
+
+  for (let rp = 0; rp < nums.length; rp++) {
+    total *= nums[rp];
+    // ! 극단적인 케이스에서 lp <= rp 조건이 있어야 함
+    while (total >= k) {
+      total /= nums[lp];
+      lp++;
+    }
+    // ! if(total < k) answer += (rp - lp + 1) 곱이기 때문에 갯수 구해줘야 함
+    if (total < k) answer++;
+  }
+  return answer;
+};
 
 // * 1차 풀이
 // ? 시간복잡도: O(n)
