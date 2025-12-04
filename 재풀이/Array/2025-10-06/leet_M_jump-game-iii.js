@@ -9,6 +9,8 @@
 // * 3차 풀이
 
 // * 2차 풀이 - (25.12.04) - 성공
+// ? 시간복잡도: O(n) : 모든 원소는 한 번만 큐에 들어가므로
+// ? 공간복잡도: O(n)
 var canReach = function (arr, start) {
   const n = arr.length;
   const isVisited = Array(n).fill(false);
