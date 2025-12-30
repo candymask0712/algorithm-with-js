@@ -7,3 +7,18 @@ var isPalindrome = function (s) {
   }
   return true;
 };
+
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+var isPalindrome = function (s) {
+  let filtered = '';
+  s = s.replace(/ +/gi, '');
+  for (const char of s) {
+    if (char.toUpperCase() === char.toLowerCase() && isNaN(char)) continue;
+    filtered += char.toLowerCase();
+  }
+
+  return filtered.split('').reverse().join('') === filtered;
+};
