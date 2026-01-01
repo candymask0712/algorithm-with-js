@@ -79,8 +79,15 @@ Array.from(set, (value) => value * 2); // [2, 4, 6]
 // let 변수 = 배열.join('') // 배열 원소를 구분자 없이 치환
 
 // ! slice
-//  let A = arr.slice(st, end); // st 이상 end '미만' 자름 / 원배열 수정 X (할당 필요)
-//  let B = arr.slice(n); // n번째 요소부터(n포함) 마지막 요소까지 잘라냄
+//* slice(k)        // k부터 끝
+//* slice(0, k)     // 앞에서 k개
+//* slice(-k)       // 뒤에서 k개
+//* slice(0, -k)    // 뒤에서 k개 제거
+//* slice(st, end)  // st 이상 end '미만' 자름
+
+//! slice 이용한 회전
+//* left  = s.slice(k) + s.slice(0, k)
+//* right = s.slice(n - k) + s.slice(0, n - k)
 
 // ! 중복 제거
 // 중복이 없는 Set 객체에 넣고 다시 배열화하여 중복제거
