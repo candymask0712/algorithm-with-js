@@ -1,3 +1,31 @@
+// * 3차 풀이 - (26.1.1) - 성공
+// ?	시간복잡도: O(n)
+// ? 	공간복잡도: O(1)
+
+var maxDistance = function (arrays) {
+  let prevMin = arrays[0][0];
+  let prevMax = arrays[0].at(-1);
+  let answer = 0;
+
+  for (let i = 1; i < arrays.length; i++) {
+    const curArr = arrays[i];
+
+    const curMin = curArr[0];
+    const curMax = curArr.at(-1);
+
+    // ! 이 부분에 Math.abs가 없어야 속도 빨라짐
+    const distance1 = Math.abs(prevMax - curMin);
+    const distance2 = Math.abs(prevMax - curMin);
+
+    prevMin = Math.min(curMin, prevMin);
+    prevMax = Math.max(curMax, prevMax);
+
+    answer = Math.max(answer, distance1, distance2);
+  }
+
+  return answer;
+};
+
 // * 2차 풀이 - (25.12.30) - 답 본 후에 성공
 // ?	시간복잡도: O(n)
 // ? 	공간복잡도: O(1)
@@ -13,7 +41,7 @@ var maxDistance = function (arrays) {
     const curMax = arrays[i].at(-1);
 
     const diff1 = Math.abs(prevMax - curMin);
-    const diff2 = Math.abs(curMax - prevMin);
+    const diff2 = Math.abs(prevMax - curMin);
 
     answer = Math.max(answer, diff1, diff2);
 
