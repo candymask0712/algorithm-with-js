@@ -8,7 +8,24 @@
 
 // * 3차 풀이
 
-// * 2차 풀이
+// * 2차 풀이 - (25.12.25) - 답보고 풀이
+// ? 시간복잡도: O(n)
+// ? 시간복잡도: O(1)
+var findMaxConsecutiveOnes = function (nums) {
+  let lp = 0;
+  let answer = 0;
+  let zp = -1;
+
+  for (let rp = 0; rp < nums.length; rp++) {
+    const cur = nums[rp];
+    if (cur === 0) {
+      lp = zp + 1;
+      zp = rp;
+    }
+    answer = Math.max(answer, rp - lp + 1);
+  }
+  return answer;
+};
 
 // * 1차 풀이
 // ? 시간복잡도: O(n)
