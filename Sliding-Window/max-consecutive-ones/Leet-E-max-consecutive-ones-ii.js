@@ -6,7 +6,28 @@
 
 // * 모범 답안
 
-// * 3차 풀이
+// * 3차 풀이 - (26.01.02) - 정답
+// ? 시간복잡도: O(n)
+// ? 시간복잡도: O(1)
+var findMaxConsecutiveOnes = function (nums) {
+  let lp = 0;
+  let chanceCount = 1;
+  let answer = 0;
+
+  for (let rp = 0; rp < nums.length; rp++) {
+    if (nums[rp] === 0) chanceCount--;
+    while (chanceCount < 0) {
+      let prev = nums[lp];
+      if (prev === 0) {
+        chanceCount++;
+      }
+      lp++;
+    }
+    answer = Math.max(answer, rp - lp + 1);
+  }
+
+  return answer;
+};
 
 // * 2차 풀이 - (25.12.25) - 답보고 풀이
 // ? 시간복잡도: O(n)

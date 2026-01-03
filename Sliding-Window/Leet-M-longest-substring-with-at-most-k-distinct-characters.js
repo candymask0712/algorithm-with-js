@@ -9,13 +9,9 @@
 //? 공간복잡도: O()
 
 // * 1차 풀이
-//? 시간복잡도: O()
-//? 공간복잡도: O()
-/**
- * @param {string} s
- * @return {number}
- */
-var lengthOfLongestSubstringTwoDistinct = function (s) {
+//? 시간복잡도: O(n) (n = s.length)
+//? 공간복잡도: O(k)
+var lengthOfLongestSubstringKDistinct = function (s, k) {
   let lp = 0;
   const h = new Map();
   let answer = 0;
@@ -23,7 +19,7 @@ var lengthOfLongestSubstringTwoDistinct = function (s) {
   for (let rp = 0; rp < s.length; rp++) {
     const cur = s[rp];
     h.set(cur, (h.get(cur) || 0) + 1);
-    while (h.size > 2) {
+    while (h.size > k) {
       const prev = s[lp];
       if (h.get(prev) === 1) {
         h.delete(prev);
