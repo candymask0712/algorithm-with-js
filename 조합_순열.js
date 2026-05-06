@@ -1,89 +1,97 @@
-const arr = ['A', 'B', 'C', 'D'];
-const selectNum = 2;
+/**
+ * 차이점은 단 두 가지:
+ *   - 순서 구분(순열) vs 무관(조합) → 시작 인덱스 사용 여부
+ *   - 중복 허용 여부 → visited 또는 다음 재귀 인덱스(i / i+1)
+ */
 
-console.log('🔹 순열(Permutation) - 순서 O, 중복 X');
-console.log(getPermutations(arr, selectNum));
-
-console.log('\n🔹 조합(Combination) - 순서 X, 중복 X');
-console.log(getCombinations(arr, selectNum));
-
-console.log('\n🔹 중복 순열(Repeated Permutation) - 순서 O, 중복 O');
-console.log(getRepeatedPermutations(arr, selectNum));
-
-console.log('\n🔹 중복 조합(Repeated Combination) - 순서 X, 중복 O');
-console.log(getRepeatedCombinations(arr, selectNum));
-
-// ✅ 순열(Permutation) - 순서 O, 중복 X
-function getPermutations(arr, selectNum) {
-  if (selectNum === 1) return arr.map((el) => [el]);
-
+// 1. 순열 nPk: 순서 O, 중복 X  → visited로 사용된 원소 차단
+function permutations(arr, k) {
+  const n = arr.length;
+  const path = [];
+  const visited = Array(n).fill(false);
   const result = [];
 
-  arr.forEach((num, index, arr) => {
-    const rest = [...arr.slice(0, index), ...arr.slice(index + 1)];
-    const permutation = getPermutations(rest, selectNum - 1);
-    permutation.forEach((subArr) => {
-      result.push([...subArr, num]);
-    });
-  });
+  function dfs() {
+    if (path.length === k) {
+      result.push([...path]);
+      return;
+    }
+    for (let i = 0; i < n; i++) {
+      if (visited[i]) continue;
+      visited[i] = true;
+      path.push(arr[i]);
+      dfs();
+      path.pop();
+      visited[i] = false; // 백트래킹 시 반드시 복원
+    }
+  }
 
+  dfs();
   return result;
 }
 
-// ✅ 중복 순열(Repeated Permutation) - 순서 O, 중복 O
-function getRepeatedPermutations(arr, selectNum) {
-  if (arr.length === 1) return arr.map((el) => [el]);
-
+// 2. 중복순열 nΠk (n^k): 순서 O, 중복 O  → visited 자체가 없음
+function permutationsWithRep(arr, k) {
+  const n = arr.length;
+  const path = [];
   const result = [];
 
-  arr.forEach((num, index, arr) => {
-    // ! 그냥 순열과 달리 재귀에 arr를 그대로 넣어줌
-    const permutation = getPermutations(arr, selectNum - 1);
-    permutation.forEach((subArr) => {
-      result.push([...subArr, num]);
-    });
-  });
+  function dfs() {
+    if (path.length === k) {
+      result.push([...path]);
+      return;
+    }
+    for (let i = 0; i < n; i++) {
+      path.push(arr[i]);
+      dfs();
+      path.pop();
+    }
+  }
 
+  dfs();
   return result;
 }
 
-let dx = [0, 0, 1, -1];
-let dy = [-1, 1, 0, 0];
-
-// ✅ 조합(Combination) - 순서 X, 중복 X
-function getCombinations(arr, selectNum) {
-  if (selectNum === 1) return arr.map((el) => [el]);
-
+// 3. 조합 nCk: 순서 X, 중복 X  → start 인덱스 + 다음 깊이는 i+1
+function combinations(arr, k) {
+  const n = arr.length;
+  const path = [];
   const result = [];
 
-  arr.forEach((num, index, arr) => {
-    // ! 조합은 순열과 다르게 중복 방지를 위해 본인보다 뒤에 있는 요소만 활용
-    const rest = arr.slice(index + 1);
-    const combinations = getCombinations(rest, selectNum - 1);
-    combinations.forEach((subArr) => {
-      result.push([...subArr, num]);
-    });
-  });
+  function dfs(start) {
+    if (path.length === k) {
+      result.push([...path]);
+      return;
+    }
+    for (let i = start; i < n; i++) {
+      path.push(arr[i]);
+      dfs(i + 1); // 자기 다음부터 → 중복 X
+      path.pop();
+    }
+  }
 
+  dfs(0);
   return result;
 }
 
-// ✅ 중복 조합(Repeated Combination) - 순서 X, 중복 O
-function getRepeatedCombinations(arr, selectNum) {
-  if (selectNum === 1) return arr.map((el) => [el]);
-
+// 4. 중복조합 nHk: 순서 X, 중복 O  → start 인덱스 + 다음 깊이는 i (자기 포함)
+function combinationsWithRep(arr, k) {
+  const n = arr.length;
+  const path = [];
   const result = [];
 
-  arr.forEach((num, index, arr) => {
-    // ! 중복조합은 딱 본인까지만 자름
-    const combinations = getRepeatedCombinations(
-      arr.slice(index),
-      selectNum - 1
-    );
-    combinations.forEach((subArr) => {
-      result.push([...subArr, num]);
-    });
-  });
+  function dfs(start) {
+    if (path.length === k) {
+      result.push([...path]);
+      return;
+    }
+    for (let i = start; i < n; i++) {
+      path.push(arr[i]);
+      dfs(i); // 자기 자신부터 → 중복 O
+      path.pop();
+    }
+  }
 
+  dfs(0);
   return result;
 }
